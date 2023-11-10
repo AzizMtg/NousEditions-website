@@ -20,6 +20,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajouter un livre</title>
+    
+      
+    <style>
+      body {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          
+      }
+
+      #form-container {
+          margin-left: auto;
+          align-items: center;
+          margin:20px ;
+      }
+
+      form {
+          width: 600px;
+          padding: 20px;
+          border: 1px solid #726b6b;
+          border-radius: 8px;
+          background-color: #8d8080ad;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+          display: block;
+          margin-bottom: 8px;
+      }
+
+      input {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 12px;
+          box-sizing: border-box;
+          border-radius: 20px;
+      }
+
+      input[type="submit"] {
+          background-color: #440202;
+          color: #fff;
+          cursor: pointer;
+          width: 200px;
+          margin: 9px;
+          align-items: center;
+      }
+  </style>
+    </head>
+
+
+  
   <title>
     Soft UI Dashboard by Creative Tim
   </title>
@@ -109,6 +166,8 @@
             </div>
             <span class="nav-link-text ms-1">Books</span>
           </a>
+          <!-- Formulaire -->
+          
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="commands.html">
@@ -195,6 +254,9 @@
             <span class="nav-link-text ms-1">Promotion</span>
           </a>
         </li>
+
+        
+      
 
         <li class="nav-item">
           <a class="nav-link  " href="statistic.html">
@@ -404,6 +466,77 @@
       </div>
     </nav>
     <!-- End Navbar -->
+
+    <div id="form-container">
+
+      <form action="traitement_livre.php" method="post">
+          <label for="titre">Titre du livre:</label>
+          <input type="text" id="titre" name="titre" required>
+
+  
+          <label for="auteur">Auteur:</label>
+          <input type="text" id="auteur" name="auteur" required>
+
+
+          <label for="ID">ID:</label>
+    <input type="number" id="ID" name="ID" required pattern="\d{8}" title="Please enter a positive 8-digit number" min="0">
+  
+          <label for="annee">Année de publication:</label>
+          <input type="number" id="annee" name="annee" required>
+  
+          <label for="genre">Genre:</label>
+          <input type="text" id="genre" name="genre" required>
+  
+          <input type="submit" value="Ajouter le livre">
+      </form>
+  </div>
+
+
+  <div id="form-container">
+
+    <form action="traitement_livre.php" method="post">
+        <label for="titre">Titre du livre:</label>
+        <input type="text" id="titre" name="titre" required>
+
+
+        
+
+
+        <label for="ID">ID:</label>
+  <input type="number" id="ID" name="ID" required pattern="\d{8}" title="Please enter a positive 8-digit number" min="0">
+
+        
+
+        <input type="submit" value="supprimer livre ">
+    </form>
+</div>
+
+
+
+<div id="form-container">
+
+  <form action="traitement_livre.php" method="post">
+      <label for="titre">Titre du livre:</label>
+      <input type="text" id="titre" name="titre" required>
+
+
+      <label for="auteur">Auteur:</label>
+      <input type="text" id="auteur" name="auteur" required>
+
+
+      <label for="ID">ID:</label>
+<input type="number" id="ID" name="ID" required pattern="\d{8}" title="Please enter a positive 8-digit number" min="0">
+
+      <label for="annee">Année de publication:</label>
+      <input type="number" id="annee" name="annee" required>
+
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" required>
+
+      <input type="submit" value="modifier  le livre">
+  </form>
+</div>
+
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
