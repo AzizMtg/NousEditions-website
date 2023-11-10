@@ -1,1 +1,2 @@
-
+memorial c'est la template front office
+soft ui dashboard c'est la template back office.
