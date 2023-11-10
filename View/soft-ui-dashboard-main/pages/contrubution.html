@@ -36,6 +36,25 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+  <style>
+    table {
+        border-collapse: collapse;
+        width: 80%;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+
+  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -404,6 +423,46 @@
       </div>
     </nav>
     <!-- End Navbar -->
+<<center>
+  <table>
+      <thead>
+          <tr>
+              <th>Numero</th>
+              <th>Nom</th>
+              <th>Adresse mail</th>
+              <th>Numero Telephone</th>
+              <th>Nom Livre</th>
+              <th>Date soumission</th>
+              <th>Telecharger fichier</th>
+              <th>Decision</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td>1234567890</td>
+              <td>Sample Book</td>
+              <td>2023-11-10</td>
+              <td><a href="#">Download</a></td>
+              <td><a href="#">Valider Livre</a>
+                <a href="#"><br><br>Livre Non Valide</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Foulen ben falten</td>
+            <td>falten@example.com</td>
+            <td>234567891</td>
+            <td>La Hayeta Li Man tounedi</td>
+            <td>2023-11-10</td>
+            <td><a href="#">Download</a></td>
+            <td><a href="#">Valider Livre</a>
+              <a href="#"><br><br>Livre Non Valide</a></td>
+        </tr>
+      </tbody>
+  </table>
+</center>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
