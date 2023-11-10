@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- books siwar -->
+
+<!-- l3onwen  -->
+
+
+<style>
+   .Books {
+      overflow: hidden;
+   }
+
+   .book-container {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      white-space: nowrap;
+   }
+
+   .book-box {
+      flex:0 0  300px ;
+      scroll-snap-align: start;
+      margin-right: 50px; /* Espace entre les livres */
+   }
+
+   .arrow-right {
+      cursor: pointer;
+   }
+</style>
+
+
+
+
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +89,7 @@
                                  <li> <a href="about.html">About us</a> </li>
                                  <li class="active"><a href="books.html">Our Books</a></li>
                                  <li><a href="library.html">library</a></li>
-                                 <li><a href="contribution.html">Contribuer</a></li>
+                                 <li><a href="contact.html">Contact us</a></li>
                                  <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                                  <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
                               </ul>
@@ -82,41 +115,49 @@
             </div>
          </div>
       </div>
+     
+     
+     
+     
+     
       <!--Books -->
       <div class="Books">
          <div class="container">
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="titlepage">
-                     <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span> 
+                     <span>نحن لمعرفة جديدة</span>
                   </div>
                </div>
             </div>
             <div class="row box">
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                  <div class="book-box">
-                     <figure><img src="images/book-1.jpg" alt="img"/></figure>
+               <div class="col-md-12">
+                  <div class="book-container">
+                     <div class="book-box">
+                        <a href="page_livre1.html">
+                        <figure><img src="images/book1.jpg" alt="img" class="img-fluid"/></figure>
+                     </a>
                   </div>
-               </div>
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="book-box">
-                     <figure><img src="images/book-2.jpg" alt="img"/></figure>
+                     <div class="book-box">
+                        <figure><img src="images/book2.jpg" alt="img" class="img-fluid"/></figure>
+                     </div>
+                     <div class="book-box">
+                        <figure><img src="images/book3.jpg" alt="img" class="img-fluid"/></figure>
+                     </div>
+                     <div class="book-box">
+                        <figure><img src="images/book4.jpg" alt="img" class="img-fluid"/></figure>
+                     </div>
+                     <div class="book-box">
+                        <figure><img src="images/book5.jpg" alt="img" class="img-fluid"/></figure>
+                     </div>
                   </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                  <div class="book-box">
-                     <figure><img src="images/book-1.jpg" alt="img"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6 offset-md-3">
-                  <p>magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris</p>
                </div>
             </div>
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
                      <div class="read-more">
-                        <a href="#">Read More</a>
+                        <a href="#">search </a>
                      </div>
                   </div>
                </div>
@@ -168,4 +209,3 @@
       <script src="js/custom.js"></script>
    </body>
 </html>
-COPY TO CLIPBOARD    SELECT ALL
