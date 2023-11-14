@@ -163,7 +163,7 @@ try {
          <section >
             <div class="reclamation-box">
                 <div class="reclamation-left">
-                    <h3 >Message has been sent check your email</h3>
+                    <h3 >Message has been sent</h3>
                 </div>   
             <div>    
         </section>
