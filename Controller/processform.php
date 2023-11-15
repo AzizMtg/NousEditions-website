@@ -1,43 +1,40 @@
 <?php
 include 'connection.php';
+include '../Model/classecontribution.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['phone_nu'];
-    $address = $_POST['subject'];
-    $message = $_POST['message'];
-    $cat = $_POST['categorie'];
+    // Create a new instance of the Contribution class with form data
+    $contribution = new Contribution($_POST['name'], $_POST['email'], $_POST['phone_nu'], $_POST['subject'], $_POST['message'], $_POST['categorie']);
+
     // Define the absolute path to the uploads directory
-$uploadsDirectory = realpath(__DIR__ . '/uploads') . '/';
+    $uploadsDirectory = realpath(__DIR__ . '/uploads') . '/';
 
-// Handle file upload
-$file_name = basename($_FILES['myfile']['name']);
-$file_path = $uploadsDirectory . $file_name;
+    // Handle file upload
+    $file_name = basename($_FILES['myfile']['name']);
+    $file_path = $uploadsDirectory . $file_name;
 
-// Move the uploaded file to the destination directory
-if (move_uploaded_file($_FILES['myfile']['tmp_name'], $file_path)) {
-    // File moved successfully
-    // You can now use $file_path in your database insertion logic or other processing
-    echo "File uploaded successfully!";
-} else {
-    // Handle the case where file movement failed
-    echo "File upload failed!";
-}
-
+    // Move the uploaded file to the destination directory
+    if (move_uploaded_file($_FILES['myfile']['tmp_name'], $file_path)) {
+        // File moved successfully
+        echo "File uploaded successfully!";
+    } else {
+        // Handle the case where file movement failed
+        echo "File upload failed!";
+    }
 
     try {
         // Insert data into the database using prepared statement
         $sql = "INSERT INTO contributions (name, email, phone_number, address, message, file_path, categorie) VALUES (:name, :email, :phone_number, :address, :message, :file_path, :categorie)";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':phone_number', $phone_number);
-        $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':message', $message);
-        $stmt->bindParam(':file_path', $file_path);
-        $stmt->bindParam(':categorie', $cat);
 
+        // Bind parameters from the Contribution object
+        $stmt->bindParam(':name', $contribution->name);
+        $stmt->bindParam(':email', $contribution->email);
+        $stmt->bindParam(':phone_number', $contribution->phone_number);
+        $stmt->bindParam(':address', $contribution->address);
+        $stmt->bindParam(':message', $contribution->message);
+        $stmt->bindParam(':file_path', $file_path);
+        $stmt->bindParam(':categorie', $contribution->categorie);
 
         $stmt->execute();
         echo "Record inserted successfully";
@@ -47,4 +44,5 @@ if (move_uploaded_file($_FILES['myfile']['tmp_name'], $file_path)) {
 }
 
 $conn = null;
+
 ?>
