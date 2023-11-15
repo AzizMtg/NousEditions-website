@@ -1,5 +1,5 @@
 
-<!---------------------- liste reclamation ---------------------------->
+<!---------------------- liste reclamation --------------------------->
 <?php
 include '../../Controller/chaimaC/Gestion_Reclamation.php';
 
@@ -18,11 +18,20 @@ $list = $reclamation_gestion->listReclamation();
 
 <!---------------------- --------------------------------------------------------------------->
 
+<!---------------------- liste reclamation ----
+<li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
 
+------------------------>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+ 
 
 <!---------------------- ------taba3 il liste client tableau-------------------------------------------------------->
     <meta charset="UTF-8">
@@ -52,6 +61,33 @@ $list = $reclamation_gestion->listReclamation();
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+
+
+  <style>
+    aside 
+    {
+      background-color: black;
+    }
+    .navbar 
+    {
+      background-color: black;
+    }
+    h1 
+    {
+      color: white;
+    }
+   .color
+   { 
+    color: white;
+  }
+    
+  
+  </style>
+
+
+
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -60,7 +96,7 @@ $list = $reclamation_gestion->listReclamation();
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="../memorial/index.html" target="_blank">
         <img src="assets/img/nousEditon.jpg" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Nous Edition</span>
+        <span class="ms-1 font-weight-bold color">Nous Edition</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -103,7 +139,7 @@ $list = $reclamation_gestion->listReclamation();
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Clients </span>
+            <span class="nav-link-text ms-1 ">Clients </span>
           </a>
         </li>
         <li class="nav-item">
