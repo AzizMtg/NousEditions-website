@@ -454,7 +454,7 @@
         </thead>
         <tbody>
             <?php
-            require('C:\Users\azizs\NousEditions-website\View\soft-ui-dashboard-main\pages\fetch_files.php');
+            require('../pages/Aziz/fetch_files.php');
 
             foreach ($rows as $row) {
                 echo "<tr>";

@@ -1,6 +1,7 @@
 <?php
+//AZIZ HETHI KHEDMET AZIZ
 include 'connection.php';
-include '../Model/classecontribution.php';
+include '../Model/AzizM/classecontribution.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create a new instance of the Contribution class with form data
