@@ -1,3 +1,31 @@
+<!-- ISAJALLLL FIL BASSSE DE DONNNNE PROMOTIONNN -->
+<?php
+include 'Gestion_Reclamation.php';
+
+include '../../View/memorial/';
+
+$error = "";
+
+// create reclamation
+$reclamation = null;
+
+// create an instance of the controller
+$reclamation_gestion = new reclamation_gestion();
+if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"]) && isset($_POST["suijet"]) && isset($_POST["textarea"])) 
+{
+    if (!empty($_POST['nom']) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && (!empty($_POST["suijet"]) || !empty($_POST["textarea"])) )
+     {
+        $reclamation = new reclamation(null,$_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['suijet'] , $_POST['textarea'] );
+       
+        $reclamation_gestion->addReclamation($reclamation);
+    } else
+        $error = "Missing information";
+}
+
+
+?>
+
+<!-- YIB3AF MAILLLL -->
 
 <?php
 
@@ -99,18 +127,18 @@ try {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../View/memorial/css/bootstrap.min.css">
         <!-- style css -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../../View/memorial/css/style.css">
         <!-- Responsive-->
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="../../View/memorial/css/responsive.css">
         <!-- fevicon -->
-        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <link rel="icon" href="../../View/memorial/images/fevicon.png" type="image/gif" />
         <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="../../View/memorial/css/jquery.mCustomScrollbar.min.css">
         
         <title>Reclamation</title>
-        <link rel="stylesheet" href="reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
+        <link rel="stylesheet" href="../../View/memorial/chaimaV1/reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
     </head>
     <body>
         <header>
@@ -121,7 +149,7 @@ try {
                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                         <div class="full">
                            <div class="center-desk">
-                              <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="#"></a> </div>
+                              <div class="logo"> <a href="index.html"><img src="../../View/memorial/images/logo.png" alt="#"></a> </div>
                            </div>
                         </div>
                      </div>
@@ -135,8 +163,8 @@ try {
                                     <li><a href="books.html">Our Books</a></li>
                                     <li><a href="library.html">library</a></li>
                                     <li><a href="contribution.html">Contribuer</a></li>
-                                    <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
-                                    <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
+                                    <li class="mean-last"> <a href="#"><img src="../../View/memorial/images/search_icon.png" alt="#" /></a> </li>
+                                    <li class="mean-last"> <a href="#"><img src="../../View/memorial/images/top-icon.png" alt="#" /></a> </li>
                                  </ul>
                               </nav>
                            </div>
@@ -179,10 +207,10 @@ try {
                            <h3>Follow Us</h3>
                         </div>
                         <ul class="location_icon2">
-                           <li> <a href="#"><img src="icon/facebook.png"></a></li>
-                           <li> <a href="#"><img src="icon/Twitter.png"></a></li>
-                           <li> <a href="#"><img src="icon/linkedin.png"></a></li>
-                           <li> <a href="#"><img src="icon/instagram.png"></a></li>
+                           <li> <a href="#"><img src="../../View/memorial/icon/facebook.png"></a></li>
+                           <li> <a href="#"><img src="../../View/memorial/icon/Twitter.png"></a></li>
+                           <li> <a href="#"><img src="../../View/memorial/icon/linkedin.png"></a></li>
+                           <li> <a href="#"><img src="../../View/memorial/icon/instagram.png"></a></li>
                         </ul>
                      </div>
                      
@@ -203,6 +231,5 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
-
 
 

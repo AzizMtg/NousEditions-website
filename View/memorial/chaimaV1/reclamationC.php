@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="../images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
     
     <title>Reclamation</title>
     <link rel="stylesheet" href="reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
@@ -26,7 +26,7 @@
                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                        <div class="center-desk">
-                          <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="#"></a> </div>
+                          <div class="logo"> <a href="index.html"><img src="../images/logo.png" alt="#"></a> </div>
                        </div>
                     </div>
                  </div>
@@ -40,8 +40,8 @@
                                 <li><a href="books.html">Our Books</a></li>
                                 <li><a href="library.html">library</a></li>
                                 <li><a href="contribution.html">Contribuer</a></li>
-                                <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
-                                <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
+                                <li class="mean-last"> <a href="#"><img src="../images/search_icon.png" alt="#" /></a> </li>
+                                <li class="mean-last"> <a href="#"><img src="../images/top-icon.png" alt="#" /></a> </li>
                              </ul>
                           </nav>
                        </div>
@@ -65,12 +65,13 @@
            </div>
         </div>
      </div>
-<!---              FORMMMMMMMMMMMMMM        -->
      <section >
         <div class="reclamation-box">
             <div class="reclamation-left">
                 <h3>Sent your request</h3>
-                <form action="traitement.php" method="POST">
+                <!---              FORMMMMMMMMMMMMMM        -->
+
+                <form action="../../../Controller/chaimaC/Traitement_Reclamation_Action.php" method="POST">
                     <div class="input-row">
                          <div >
                              <label for="nom">First Name</label>
@@ -115,10 +116,10 @@
                        <h3>Follow Us</h3>
                     </div>
                     <ul class="location_icon2">
-                       <li> <a href="#"><img src="icon/facebook.png"></a></li>
-                       <li> <a href="#"><img src="icon/Twitter.png"></a></li>
-                       <li> <a href="#"><img src="icon/linkedin.png"></a></li>
-                       <li> <a href="#"><img src="icon/instagram.png"></a></li>
+                       <li> <a href="#"><img src="../icon/facebook.png"></a></li>
+                       <li> <a href="#"><img src="../icon/Twitter.png"></a></li>
+                       <li> <a href="#"><img src="../icon/linkedin.png"></a></li>
+                       <li> <a href="#"><img src="../icon/instagram.png"></a></li>
                     </ul>
                  </div>
                  
