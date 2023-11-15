@@ -1,0 +1,7 @@
+i'm still figuring out how to move files donc for now i'll put which files i worked with here :
+- contribution.php
+- processform.php
+- connection.php
+- fetch_files.php
+- download.php
+- contribution.html (memorial)
