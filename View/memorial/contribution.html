@@ -26,6 +26,34 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   <style>
+
+      /* Style for the multiple select dropdown */
+#book_categories {
+  width: 100%;
+  height: 150px; /* Adjust the height as needed */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-bottom: 10px;
+  overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+/* Style for the options within the dropdown */
+#book_categories option {
+  padding: 5px;
+}
+
+/* Style for when an option is selected */
+#book_categories option:checked {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+   </style>
+   
    </head>
    <!-- body -->
    <body class="main-layout contact-page">
@@ -84,45 +112,77 @@
       </div>
       <!-- EL FORM HNE YA 7SIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN -->
 
-
       <div class="Contact">
          <div class="container">
-            <div class="row">
-               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                  <form>
-                     <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <input class="form-control" placeholder="Nom" name="name" type="text">
-                        </div>
-                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <input class="form-control" placeholder="Email" name="email" type="Email">
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <input class="form-control" placeholder="Numero tel" name="phone_nu" type="text">
-                        </div>
-                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                           <input class="form-control" placeholder="Adresse" name="subject" type="text">
-                        </div>
-                        <div class="col-sm-12">
-                           <textarea class="textarea" name="message" placeholder="Message">Veuillez mettre la description de votre livre ici</textarea>
-                        </div>
-                        <div class="col-sm-12">
-                           <label for="myfile">Select a file (preferrably a .word file):</label>
-                           <input type="file" id="myfile" name="myfile">
-                        </div>
+             <div class="row">
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                     <div class="contact-form">
+                         <form id="myForm" method="POST" action="/Controller/processform.php" enctype="multipart/form-data">
+                             <div class="row">
+                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                     <input class="form-control" placeholder="Nom" name="name" type="text">
+                                 </div>
+                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                     <input class="form-control" placeholder="Email" name="email" type="Email">
+                                 </div>
+                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                     <input class="form-control" placeholder="Numero tel" name="phone_nu" type="text">
+                                 </div>
+                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                     <input class="form-control" placeholder="Adresse" name="subject" type="text">
+                                 </div>
+                                 <div class="col-sm-12">
+                                     <textarea class="textarea" name="message" placeholder="Veuillez mettre une description bréve de votre livre ici"></textarea>
+                                 </div>
+                                 <div class="col-sm-12">
+                                     <label for="myfile">Select a file (preferably a .word file):</label>
+                                     <input type="file" id="myfile" name="myfile">
+                                 </div>
+                                 <!-- Multiple select dropdown for book categories -->
+                                 <div class="col-sm-12">
+                                     <label for="book_categories">Veuiller Choisir la categorie de votre livre:</label>
+                                     <select id="book_categories" name="categorie" multiple>
+                                         <option value="DRAMA">DRAMA</option>
+                                         <option value="HORREUR">HORROR</option>
+                                         <option value="ENFANTS">ENFANTS</option>
+                                         <option value="ROMANCE">ROMANCE</option>
+                                         <option value="HISTOIRE">HISTOIRE</option>
+                                         <!-- Add more options for different categories -->
+                                     </select>
+                                 </div>
+                                 <div class="col-sm-12">
+                                     <button class="send-btn" type="submit">Send</button>
+                                 </div>
+                             </div>
+                         </form>
                      </div>
-                  </form>
-               </div>
-               <button class="send-btn">Send</button>
-            </div>
+                 </div>
+             </div>
          </div>
-      </div>
-
-
-
-
-      
-      <!-- end Contact -->
+     </div>
+     
+     <script>
+         document.getElementById('myForm').addEventListener('submit', function (event) {
+             var isValid = true;
+             var formElements = this.elements;
+     
+             // Loop through form elements to check if they are filled
+             for (var i = 0; i < formElements.length; i++) {
+                 if (formElements[i].name !== '' && formElements[i].type !== 'submit') {
+                     if (formElements[i].value.trim() === '') {
+                         isValid = false;
+                         break;
+                     }
+                 }
+             }
+     
+             if (!isValid) {
+                 alert('Please fill in all fields.');
+                 event.preventDefault(); // Prevent form submission if validation fails
+             }
+         });
+     </script>
+     
       <!-- footer -->
       <footer>
          <div class="footer">
@@ -162,3 +222,10 @@
       <script src="js/custom.js"></script>
    </body>
 </html>
+
+
+
+
+<!-- CURSORSSS -->
+
+<style type="text/css">body { cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8KCgr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQ/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPjw9/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZv//AGb//wBm//8AZv//AGb//wBm//8AZv//FEeU/wAAAP8AAAD/AAAA/wBm//8AZv//AGb//xQUFP8AAAD/AAAA/wAAAP8AZv//AGb//wBm//8AZv//AGb//wBm//8AZv//AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm//8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AZv//AAAA/wAAAP8AAAD/AGb//xJFkf8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb//wAAAP8AAAD/////////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////AGb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZv//AAAA//////////////////////////////////////////////////////8AAAD/AAAA////////////////////////////////////////////AAAA//////8AZv//AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm//8AAAD//////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD//////wAAAP//////AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP///////////wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb//wAAAP//////AAAA////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////AGb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZv//AAAA//////8AAAD///////////////////////////////////////////8AAAD///////////////////////////////////////////////////////////8AZv//AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm//8AAAD//////wAAAP///////////////////////////////////////////wAAAP///////////////////////////////////////////////////////////wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb//wAAAP//////AAAA////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////AGb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZv//AAAA//////8AAAD///////////////////////////////////////////8AAAD///////////////////////////////////////////////////////////8AZv//AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABm//8AAAD//////wAAAP///////////////////////////////////////////wAAAP///////////////////////////////////////////////////////////wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb//wAAAP//////AAAA////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////AGb//wAAAP8AAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAZv//AAAA//////8AAAD///////////////////////////////////////////8AAAD///////////////////////////////////////////////////////////8AZv//AAAA/wAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAABm//8AAAD//////wAAAP///////////////////////////////////////////wAAAP///////////////////////////////////////////////////////////wBm//8AAAD/AAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAGb//wAAAP//////AAAA////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////AGb//wAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAAAAZv//AGb///////8AAAD///////////////////////////////////////////8AAAD//////////////////////////////////////////////////////wAAAP8AZv//AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP///////////////////////////////////////////wAAAP//////////////////////////////////////////////////////AAAA/xOSE38AAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////8AAAD/AAAAAAAAAP///////////////////////////////////////////wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANDQ3/AAAA/wAAAP8AAAD/AGb//wBm//8AZv//AGb//wAAAP8AAAD/AAAA/w2NDX8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wBm//8AZv//AGb//wBm//8AZv//AGb//wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AGb//wBm//8AZv//AGb//wBm//8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wBm//8AZv//AGb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AZv//AGb//wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/yQkJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////8f9/8/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA7AAAAOwAAADMAAAAxAAAAMcAAAPHgCAHw+B4H4AP//+AD///gD///4H///+H////n/////////8='), auto; }</style>
