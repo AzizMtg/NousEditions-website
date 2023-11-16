@@ -64,6 +64,7 @@ $list = $reclamation_gestion->listReclamation();
 
 
 
+
   <style>
     aside 
     {
@@ -80,7 +81,7 @@ $list = $reclamation_gestion->listReclamation();
    .color
    { 
     color: white;
-  }
+   }
     
   
   </style>
@@ -90,7 +91,7 @@ $list = $reclamation_gestion->listReclamation();
 
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100 ">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -103,7 +104,7 @@ $list = $reclamation_gestion->listReclamation();
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="dashboard.html">
+          <a class="nav-link  active" href="index.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -184,7 +185,7 @@ $list = $reclamation_gestion->listReclamation();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="pages/contrubution.html">
+          <a class="nav-link  " href="pages/contrubution.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -205,7 +206,7 @@ $list = $reclamation_gestion->listReclamation();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="pages/reclamation.html">
+          <a class="nav-link  " href="reclamation.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -344,7 +345,7 @@ $list = $reclamation_gestion->listReclamation();
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
         <div class="table__header">
-            <h1>RECLAMATION</h1>
+            <h1><i>RECLAMATION</i></h1>
         </div>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
