@@ -36,56 +36,6 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-
-  <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            border: 1px solid #ddd;
-            font-family: Arial, sans-serif;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
-    </style>
-
-<style>
-    aside 
-    {
-      background-color: black;
-    }
-    .navbar 
-    {
-      background-color: black;
-    }
-    h1 
-    {
-      color: white;
-    }
-   .color
-   { 
-    color: white;
-  }
-    
-  
-  </style>
-
-  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -344,9 +294,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Contributions</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Contributions</h6>
+          <h6 class="font-weight-bolder mb-0">Dashboard</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -454,51 +404,6 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <!--  //////////////////////////////////////////////// AZIZ TERRITORY ////////////////////////////////////////// -->
-    <<center>
-    <h2>Contributions</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>Description</th>
-                <th>Categorie</th>
-                
-                <th>Download</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            require('../pages/Aziz/fetch_files.php');
-
-            foreach ($rows as $row) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['phone_number'] . "</td>";
-                echo "<td>" . $row['address'] . "</td>";
-                echo "<td>" . $row['message'] . "</td>";
-                echo "<td>" . $row['categorie'] . "</td>"; // Display the categorie column
-                //echo "<td>" . $row['file_path'] . "</td>";
-                
-                // Download link using download.php script
-                $file_path = $row['file_path'];
-                echo "<td><a href='download.php?file=" . urlencode($file_path) . "'>Download</a></td>";
-                
-                echo "</tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-</center>
-
- <!--  //////////////////////////////////////////////// AZIZ TERRITORY END ////////////////////////////////////////// -->
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
