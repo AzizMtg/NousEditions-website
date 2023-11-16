@@ -2,7 +2,7 @@
 <?php
 include 'Gestion_Reclamation.php';
 
-include '../../View/memorial/';
+
 
 $error = "";
 
@@ -13,13 +13,15 @@ $reclamation = null;
 $reclamation_gestion = new reclamation_gestion();
 if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"]) && isset($_POST["suijet"]) && isset($_POST["textarea"])) 
 {
-    if (!empty($_POST['nom']) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && (!empty($_POST["suijet"]) || !empty($_POST["textarea"])) )
+    if (!empty($_POST['nom']) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && (!empty($_POST["suijet"]) && !empty($_POST["textarea"])) )
      {
         $reclamation = new reclamation(null,$_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['suijet'] , $_POST['textarea'] );
        
         $reclamation_gestion->addReclamation($reclamation);
     } else
-        $error = "Missing information";
+        {$error = "Missing information";
+         echo $error ; }
+
 }
 
 
@@ -28,6 +30,23 @@ if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"]) &&
 <!-- YIB3AF MAILLLL -->
 
 <?php
+
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php' ; 
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+
+if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["email"]) && isset($_POST["suijet"]) && isset($_POST["textarea"])) 
+{
+    if (!empty($_POST['nom']) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && (!empty($_POST["suijet"]) && !empty($_POST["textarea"])) )
+     {
+
 
 $nom = $_POST['nom'] ; 
 $prenom = $_POST['prenom'] ; 
@@ -82,17 +101,9 @@ $message = '<!DOCTYPE html>
     </div>
 </body>
 </html>';
+    
 
 
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php' ; 
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -118,6 +129,7 @@ try {
     $mail->Body    = $message ;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+    
     $mail->send();
 
 
@@ -224,12 +236,16 @@ try {
     </body>
     </html>';
 
-
+   
 
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
+     }
+   }
+
 ?>
 
 

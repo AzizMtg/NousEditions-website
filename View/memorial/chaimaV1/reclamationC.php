@@ -71,13 +71,13 @@
                 <h3>Sent your request</h3>
                 <!---              FORMMMMMMMMMMMMMM        -->
 
-                <form action="../../../Controller/chaimaC/Traitement_Reclamation_Action.php" method="POST">
+                <form id="form" action="../../../Controller/chaimaC/Traitement_Reclamation_Action.php" method="POST">
                     <div class="input-row">
-                         <div >
+                         <div id="div1">
                              <label for="nom">First Name</label>
                              <input id="nom"  name="nom" type="text" placeholder="enter your first name">
                          </div>
-                         <div>
+                         <div id="div2">
                             <label for="prenom" >Last Name</label>
                             <input id="prenom" name="prenom" type="text" placeholder="enter your Last Name">
                         </div>
@@ -85,20 +85,23 @@
                     </div>
                   
                     <div class="input-row">
-                       <div >
+                       <div id="div5" >
                            <label for="email">Email</label>
                            <input id="email" name="email" type="email" placeholder="enter your email">
                        </div>
-                       <div >
+                       <div id="div3" >
                           <label for="suijet">Subject</label>
                           <input id="suijet" name="suijet" type="text" placeholder="">
                       </div>
  
                     </div>
-
-                       <label id="textarea">Message</label>
-                       <textarea  id="textarea"  name="textarea" rows="5" placeholder="write your message"></textarea>
-                       <button type="submit">Send</button>
+                       <div id="div4" >
+                           <label for="textarea">Message</label>
+                           <textarea id="textarea" name="textarea" rows="5" placeholder="write your message"></textarea>
+                           
+                       </div>
+                       
+                       <button type="submit" id="submit">Send</button>
  
                 </form>
  
@@ -128,7 +131,8 @@
         </div>
        
      </footer>
-    
+     <script src="reclamation_controle_saisie.js" ></script>
+
    
 </body>
 </html>
