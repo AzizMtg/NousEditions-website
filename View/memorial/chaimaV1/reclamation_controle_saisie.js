@@ -1,9 +1,4 @@
 
-
-
-
-
-
 /***************  partie 1  *************************/
 let submit = document.getElementById("submit");
 
@@ -18,8 +13,10 @@ function hello(event) {
 
 
 
-    let c1 = /^[A-Za-z]+$/;
-    let c2 = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let c1 = /^[A-Za-z]+$/;  // lettre uniquement
+    let c2 = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // les mail il kol ay forme
+    let c3 = /^[A-Za-z]$|^[A-Za-z][A-Za-z0-9]*$/; // 7arf louwil yizim ikoun lettre il ba9i 3adi
+
 
     // kan il kolhom is7a7
     if ((nom.value.length >= 1 && c1.test(nom.value)) && (prenom.value.length >= 1 && c1.test(prenom.value)) && (sujet.value.length >= 1) && (textarea.value.length >= 1 ) && (email.value.length >= 1 && c2.test(email.value)))
@@ -31,13 +28,15 @@ function hello(event) {
     else 
   {    event.preventDefault(); // Prevent the default form submission
        //nom
-        if (nom.value.length >= 1 && c1.test(nom.value)) {
+        if (nom.value.length >= 1 && c1.test(nom.value))
+        {
             displayMessage('div1', 'correcte', 'green'); 
-        } else {
-            displayMessage('div1', 'veuillez entrer un nom valide (lettre uniquement)', 'red');
-            
-            
         }
+        else 
+        {
+         displayMessage('div1', 'veuillez entrer un nom valide (lettre uniquement)', 'red');
+        }
+
         //prenom
         if (prenom.value.length >= 1 && c1.test(prenom.value)) {
             displayMessage('div2', 'correcte', 'green'); 
@@ -46,13 +45,15 @@ function hello(event) {
              
         }
         
-        //objectif
-        if (sujet.value.length >= 1) {
+        //subject
+        
+        if (sujet.value.length >= 1 && c3.test(sujet.value)) {
             displayMessage('div3', 'correcte', 'green'); 
         } else {
             displayMessage('div3', 'veuillez remplir ce champ ', 'red');
             
         }
+
          
         //textarea
         if (textarea.value.length >= 1 ) {
@@ -61,9 +62,7 @@ function hello(event) {
             displayMessage('div4', 'veuillez remplir ce champ', 'red');
             
         }
-    
-    
-    
+        
         // email
         if (email.value.length >= 1 && c2.test(email.value))
          { displayMessage('div5', 'correcte', 'green');
@@ -77,12 +76,11 @@ function hello(event) {
 
     }
 
-
-
   
 }
 
-function displayMessage(containerId, message, color) {
+function displayMessage(containerId, message, color) 
+{
     let p = document.createElement('p');
     let div = document.getElementById(containerId);
     let content = document.createTextNode(message);
@@ -100,7 +98,6 @@ function displayMessage(containerId, message, color) {
 submit.addEventListener('click', hello);
 
 
-/***************  partie 3 *************************/
 
 
 
