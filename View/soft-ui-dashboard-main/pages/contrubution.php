@@ -484,10 +484,11 @@
                 echo "<td>" . $row['phone_number'] . "</td>";
                 echo "<td>" . $row['address'] . "</td>";
                 echo "<td>" . $row['message'] . "</td>";
-                echo "<td>" . $row['categorie'] . "</td>"; // Display the categorie column
-                //echo "<td>" . $row['file_path'] . "</td>";
+                echo "<td>" . $row['categorie'] . "</td>"; //display mte3 kol chy ela file path
                 
-                // Download link using download.php script
+                
+                // 
+                //7achitvh bech nprintiha juste 7achti beha bech ntelechargi bel download.php
                 $file_path = $row['file_path'];
                 echo "<td><a href='download.php?file=" . urlencode($file_path) . "'>Download</a></td>";
                 
