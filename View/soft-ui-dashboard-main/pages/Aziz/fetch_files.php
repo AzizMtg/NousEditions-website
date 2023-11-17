@@ -1,5 +1,5 @@
 <?php
-require('C:\Users\azizs\NousEditions-website\Controller\connection.php');
+require('../../../../controller/connection.php');
 // Include your PDO connection script here
 
 try {
