@@ -19,6 +19,7 @@ class reclamation
         $this->email = $e;
         $this->sujet = $s;
         $this->mess = $m;
+    
 
     }
     
@@ -62,6 +63,17 @@ class reclamation
     public function getRepense()
     {
         return $this->repense;
+    }
+
+    public function setEtat($etat) {
+        $this->etat = $etat;
+        return $this;
+
+    }
+    public function setReponse($repnse) {
+        $this->repense = $repnse;
+        return $this;
+
     }
 
 

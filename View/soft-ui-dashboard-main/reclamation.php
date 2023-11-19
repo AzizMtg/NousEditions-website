@@ -413,7 +413,7 @@ $list = $reclamation_gestion->listReclamation();
                         <a href="voir_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">view</a>
                         </td>
                         
-                        <td><?= $reclamation['etat']; ?></td>
+                        <td class="talwin"><?= $reclamation['etat']; ?></td>
                         
                         <td>
                          <a href="?delete=true&id=<?php echo $reclamation['id']; ?>" onclick="return confirm('Mit2akid it7ib itfasa5 il reclamation ?')">Delete</a>
@@ -430,8 +430,10 @@ $list = $reclamation_gestion->listReclamation();
                 </tbody>
             </table>
         </section>
-      
-            <!-- -------------------------------tableauuuu reclamationnnnn --------------------------  -->
+
+        <script src="chaimaV2/tableau_reclamation.js"></script>
+
+            <!-- -------------------------------  --------------------------  -->
   </main >
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">

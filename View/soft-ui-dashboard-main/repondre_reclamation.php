@@ -14,8 +14,32 @@ if (isset($_GET["delete"]) && isset($_GET["id"])) {
 // Fetch reclamation by id
 $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
 
-?>
 
+// update
+
+$error = "";
+/*************************update reclamation ***********************/
+
+$reclamationU = null;
+
+// create an instance of the controller
+$reclamation_gestion = new reclamation_gestion();
+if (isset($_POST["id"]) && isset($_POST["nom"]) && isset($_POST["prenom"]) &&isset($_POST["email"]) && isset($_POST["suijet"]) && isset($_POST["reclamation"]) && isset($_POST["repense"]) ) {
+    if (!empty($_POST["id"]) && !empty($_POST['nom']) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && !empty($_POST["suijet"]) && !empty($_POST["reclamation"]) && !empty($_POST["repense"])) {
+        $reclamationU = new reclamation( $_POST['id'],$_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['suijet'] , $_POST['reclamation'] );
+      
+        $reclamationU =$reclamationU->setEtat("traiter");  
+        $reclamationU =$reclamationU->setReponse($_POST["repense"]);  
+
+              
+        $reclamation_gestion->updateReclamation($reclamationU, $_POST["id"]);
+        header('Location:reclamation.php');
+    } else
+        $error = "Missing information";
+}
+
+
+?>
 
 
 
@@ -389,7 +413,7 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
             <div   class="reclamation-left">
                 <!---              FORMMMMMMMMMMMMMM        -->
 
-                <form id="form" action="reclamation.php" method="GET">
+                <form id="form" action="" method="POST">
 
                        <input type="hidden" name="id" value="<?= $reclamation['id']; ?>">
                       <input  class="titre modifier_input" type="text" value="Reclamation pour le client N : <?= $reclamation['id']; ?>" readonly>

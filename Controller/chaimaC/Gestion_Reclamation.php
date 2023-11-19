@@ -72,6 +72,31 @@ class reclamation_gestion
     }
 
 
+    function updateReclamation($reclamation, $id)
+    {
+        try {
+            $config = new Config();
+            $db = $config->getConexion();
+            
+            $query = $db->prepare( 'UPDATE reclamation SET nom = :nom, prenom = :prenom, email = :email,  sujet = :sujet , message =:message ,etat=:etat,reponse=:reponse WHERE id= :id' );
+            $query->execute([
+                'id' => $id,
+                'nom' => $reclamation->getNom(),
+                'prenom' => $reclamation->getPrenom(),
+                'email' => $reclamation->getEmail(),
+                'sujet' => $reclamation->getSujet(),
+                'message' => $reclamation->getMess(),
+                'etat' => $reclamation->getEtat(),
+                'reponse' => $reclamation->getRepense(),
+
+            ]);
+            echo $query->rowCount() . " records UPDATED successfully <br>";
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+ 
+
   
 }
 
