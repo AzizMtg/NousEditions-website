@@ -437,7 +437,7 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
             </div>   
         <div>    
     </section>
-    <script src="rependre_reclamation.js" ></script>
+    <script src="chaimaV2/rependre_reclamation.js" ></script>
 
       
             <!-- ------------------------------- --------------------------  -->
