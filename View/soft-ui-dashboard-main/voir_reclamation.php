@@ -1,5 +1,4 @@
-
-<!---------------------- liste reclamation --------------------------->
+<!---------------------- voir reclamation imta3 il client  --------------------------->
 <?php
 include '../../Controller/chaimaC/Gestion_Reclamation.php';
 
@@ -12,8 +11,14 @@ if (isset($_GET["delete"]) && isset($_GET["id"])) {
   $reclamation_gestion->deleteReclamation($_GET["id"]);
 }
 
-$list = $reclamation_gestion->listReclamation();
+// Fetch reclamation by id
+$reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
+
 ?>
+
+
+
+
 
 
 <!---------------------- --------------------------------------------------------------------->
@@ -25,11 +30,8 @@ $list = $reclamation_gestion->listReclamation();
  
 
 <!---------------------- ------taba3 il liste reclamation tableau-------------------------------------------------------->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
     <link rel="stylesheet" href="chaimaV2/style.css">
+
 <!---------------------- --------------------------------------------------------------------->
 
   <meta charset="utf-8" />
@@ -78,6 +80,7 @@ $list = $reclamation_gestion->listReclamation();
   </style>
 
 
+<link rel="stylesheet" href="chaimaV2/styleV.css">
 
 
 </head>
@@ -98,7 +101,7 @@ $list = $reclamation_gestion->listReclamation();
           <a class="nav-link  active" href="index.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>shop </title>
+                <title>shop </title>  
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
                     <g transform="translate(1716.000000, 291.000000)">
@@ -380,58 +383,48 @@ $list = $reclamation_gestion->listReclamation();
     </nav>
     <!-- End Navbar -->
     <!-- -------------------------------tableauuuu reclamationnnnn --------------------------  -->
-    
-        <section class="table__body">
-            <table>
-                <thead>
-                    <tr>
-                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> nom <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> prenom <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> email <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> sujet <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> message <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> etat <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> supprimer <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Rependre <span class="icon-arrow">&UpArrow;</span></th>
+    <br><br>
+    <section >
+        <div class="reclamation-box">
+            <div   class="reclamation-left">
+                <h3 id="titre"> reclamation pour le client N : <?= $reclamation['id']; ?></h3>
+                <!---              FORMMMMMMMMMMMMMM        -->
 
-
-                    </tr>
-                </thead>
-                <tbody>       
-                <?php
-                 foreach ($list as $reclamation) {
-                ?>
-                    <tr>
-                        <td><?= $reclamation['id']; ?></td>
-                        <td><?= $reclamation['nom']; ?></td>
-                        <td><?= $reclamation['prenom']; ?></td>
-                        <td><a href="#"><?= $reclamation['email']; ?></a></td>
-                        <td><?= $reclamation['sujet']; ?></td>
-
-                        <td>
-                        <a href="voir_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">view</a>
-                        </td>
-                        
-                        <td><?= $reclamation['etat']; ?></td>
-                        
-                        <td>
-                         <a href="?delete=true&id=<?php echo $reclamation['id']; ?>" onclick="return confirm('Mit2akid it7ib itfasa5 il reclamation ?')">Delete</a>
-                        </td>
-
+                <form id="form"  >
                           
-                        <td>
-                        <a href="repondre_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">Repondre</a>
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
-                </tbody>
-            </table>
-        </section>
+                         <div id="divgrid">
+                             <label for="nom" id="r">Non du client</label>
+                             <?php echo $reclamation['nom']; ?>
+                         </div>
+                         <div id="divgrid">
+                            <label for="prenom" id="r">Prenom du client </label>
+                            <?php echo $reclamation['prenom']; ?>
+                        </div>
+
+                   <div id="divgrid" >
+                           <label for="email"id="r">Email du client</label>
+                           <?php echo $reclamation['email']; ?>
+                       </div>
+                       <div id="divgrid"  >
+                          <label for="suijet" id="r">Subject du Reclamation</label>
+                          <?php echo $reclamation['sujet']; ?>
+                      </div>
+ 
+                   
+                       <div id="divgrid" >
+                           <label for="textarea" id="r">Message du Reclamation</label>
+                           <?php echo $reclamation['message']; ?>
+                       </div>
+                       
+                      <a href="reclamation.php" class="but">Retourne</a>
+ 
+                </form>
+ 
+            </div>   
+        <div>    
+    </section>
       
-            <!-- -------------------------------tableauuuu reclamationnnnn --------------------------  -->
+            <!-- ------------------------------- --------------------------  -->
   </main >
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">

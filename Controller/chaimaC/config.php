@@ -18,7 +18,7 @@ class config
              echo "connecte" ; 
         }
 
-        catch (PDOException $e)
+       catch (PDOException $e)
         {
             die ('Erreur:'.$e->getMessage());
         }

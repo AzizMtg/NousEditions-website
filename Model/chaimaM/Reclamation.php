@@ -7,8 +7,11 @@ class reclamation
     private ?string $email = null;
     private ?string $sujet = null;
     private ?string $mess = null;
+    private ?string $etat ;
+    private ?string $repense ;
 
-    public function __construct($id = null, $n, $p, $e, $s ,$m)
+
+    public function __construct($id = null, $n, $p, $e, $s ,$m )
     {
         $this->id_reclamation = $id;
         $this->nom = $n;
@@ -16,6 +19,7 @@ class reclamation
         $this->email = $e;
         $this->sujet = $s;
         $this->mess = $m;
+
     }
     
 
@@ -49,6 +53,15 @@ class reclamation
     public function getMess()
     {
         return $this->mess;
+    }
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    public function getRepense()
+    {
+        return $this->repense;
     }
 
 

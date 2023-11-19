@@ -7,7 +7,7 @@ class reclamation_gestion
 {
   function addReclamation($reclamation)
     {
-        $sql = "INSERT INTO reclamation  VALUES (NULL,:nom,:prenom, :email,:sujet,:mess)";
+        $sql = "INSERT INTO reclamation  VALUES (NULL,:nom,:prenom, :email,:sujet,:mess,DEFAULT,DEFAULT)";
 
         $config = new Config();
         $db = $config->getConexion();
@@ -52,6 +52,22 @@ class reclamation_gestion
             $req->execute();
         } catch (Exception $e) {
             die('Error:' . $e->getMessage());
+        }
+    }
+
+    function showReclamation($id)
+    {
+        $sql = "SELECT * from reclamation where id = $id";
+        $config = new Config();
+        $db = $config->getConexion();
+        try {
+            $query = $db->prepare($sql);
+            $query->execute();
+
+            $reclamation = $query->fetch();
+            return $reclamation;
+        } catch (Exception $e) {
+            die('Error: ' . $e->getMessage());
         }
     }
 
