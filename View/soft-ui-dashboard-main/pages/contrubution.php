@@ -40,7 +40,7 @@
   <style>
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 80%;
             border: 1px solid #ddd;
             font-family: Arial, sans-serif;
         }
@@ -455,9 +455,8 @@
     </nav>
     <!-- End Navbar -->
     <!--  //////////////////////////////////////////////// AZIZ TERRITORY ////////////////////////////////////////// -->
-    <<center>
+    <center>
     <h2>Contributions</h2>
-
     <table>
         <thead>
             <tr>
@@ -466,9 +465,10 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Address</th>
-                <th>Description</th>
                 <th>Categorie</th>
-                
+                <th>Facebook</th>
+                <th>Etat Contribution</th>
+                <th>Details</th>
                 <th>Download</th>
             </tr>
         </thead>
@@ -483,15 +483,17 @@
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['phone_number'] . "</td>";
                 echo "<td>" . $row['address'] . "</td>";
-                echo "<td>" . $row['message'] . "</td>";
-                echo "<td>" . $row['categorie'] . "</td>"; //display mte3 kol chy ela file path
-                
-                
-                // 
-                //7achitvh bech nprintiha juste 7achti beha bech ntelechargi bel download.php
+                echo "<td>" . $row['categorie'] . "</td>";
+                echo "<td>" . $row['facebook'] . "</td>";
+                echo "<td>" . $row['etat_contribution'] . "</td>"; // Show etat_contribution
+
+                // Details link based on the ID
+                echo "<td><a href='../../../Controller/book_details_" . $row['id'] . ".php'>Click for Details</a></td>";
+
+                // Download link
                 $file_path = $row['file_path'];
                 echo "<td><a href='download.php?file=" . urlencode($file_path) . "'>Download</a></td>";
-                
+
                 echo "</tr>";
             }
             ?>
