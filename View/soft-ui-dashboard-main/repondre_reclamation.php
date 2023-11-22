@@ -451,7 +451,7 @@ if (isset($_POST["id"]) && isset($_POST["nom"]) && isset($_POST["prenom"]) &&iss
                        
 
                       <a href="reclamation.php" class="but">Retourne</a>
-                      <button type="submit" id="submit" class="but">send</button>
+                      <button type="submit" id="submit" class="but" >send</button>
                       
 
                      

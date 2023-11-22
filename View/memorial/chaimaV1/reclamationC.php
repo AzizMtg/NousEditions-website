@@ -16,9 +16,43 @@
     
     <title>Reclamation</title>
     <link rel="stylesheet" href="reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
+
+
+    <style>
+
+    .hov:hover
+      {
+         background-color: gray;
+         border-radius: 20px;
+         padding: 20px;
+      }
+      .voirmess
+      {
+         width: 25px;
+         height: 25px;
+         margin-bottom:25px;
+      }
+     
+      .h3
+      {
+         display: inline-block;
+         font-size: 20px;
+      }
+      .h3:hover
+      {
+         display: inline-block;
+         font-size: 20px;
+         color: white;
+         padding: 5px;
+      }
+     
+   </style>
+
 </head>
 <body>
+
     <header>
+
         <!-- header inner -->
         <div class="header">
            <div class="container">
@@ -49,7 +83,7 @@
                  </div>
               </div>
            </div>
-        </div>      
+        </div>    
         <!-- end header inner -->
      </header>
      <br><br><br>
@@ -68,7 +102,11 @@
      <section >
         <div class="reclamation-box">
             <div class="reclamation-left">
-                <h3>Sent your request</h3>
+            <a href="../repense_reclamation_tableau.php" class="hov" ><h3 class="h3">voir message</h3> <img  src="mess.png" class="voirmess"></a> 
+           
+
+            <h3>Sent your request </h3>
+
                 <!---              FORMMMMMMMMMMMMMM        -->
 
                 <form id="form" action="../../../Controller/chaimaC/Traitement_Reclamation_Action.php" method="POST">
@@ -102,12 +140,15 @@
                        </div>
                        
                        <button type="submit" id="submit">Send</button>
- 
+
+
                 </form>
  
             </div>   
-        <div>    
+        <div> 
+   
     </section>
+
   
       <!-- footer -->
       <footer>

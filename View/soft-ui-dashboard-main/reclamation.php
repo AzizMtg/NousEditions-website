@@ -16,7 +16,7 @@ $list = $reclamation_gestion->listReclamation();
 ?>
 
 
-<!---------------------- --------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +53,7 @@ $list = $reclamation_gestion->listReclamation();
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 
+  <link rel="stylesheet" href="chaimaV2/tableau.css">
 
 
 
@@ -410,18 +411,18 @@ $list = $reclamation_gestion->listReclamation();
                         <td><?= $reclamation['sujet']; ?></td>
 
                         <td>
-                        <a href="voir_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">view</a>
+                        <a  class="talwin2" href="voir_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">view</a>
                         </td>
                         
                         <td class="talwin"><?= $reclamation['etat']; ?></td>
                         
                         <td>
-                         <a href="?delete=true&id=<?php echo $reclamation['id']; ?>" onclick="return confirm('Mit2akid it7ib itfasa5 il reclamation ?')">Delete</a>
+                         <a  class="talwin2" href="?delete=true&id=<?php echo $reclamation['id']; ?>" onclick="return confirm('Mit2akid it7ib itfasa5 il reclamation ?')">Delete</a>
                         </td>
 
                           
-                        <td>
-                        <a href="repondre_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">Repondre</a>
+                        <td >
+                        <a class="talwin2" href="repondre_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">Repondre</a>
                         </td>
                     </tr>
                 <?php

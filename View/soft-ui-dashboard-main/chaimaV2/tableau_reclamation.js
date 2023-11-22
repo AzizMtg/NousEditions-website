@@ -9,3 +9,6 @@ for (var i = 0; i < talwinElements.length; i++) {
         talwin.style.color = "green";
     }
 }
+
+
+

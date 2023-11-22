@@ -8,16 +8,11 @@ function hello(event) {
 
     let repense = document.getElementById("repense"); 
 
-
-
-
-
     // kan il kolhom is7a7
     if (repense.value.length >= 1 )
-    {
+    {       
             let form = document.getElementById("form"); // Replace "yourFormId" with the actual ID of your form
             form.submit();
-        
     }
     else 
   {    event.preventDefault(); // Prevent the default form submission
@@ -25,7 +20,7 @@ function hello(event) {
        
         //textarea
         if (repense.value.length >= 1 ) {
-            displayMessage('div1', 'correcte', 'green'); 
+            displayMessage('div1', 'send your repense', 'green'); 
         } else {
             displayMessage('div1', 'Ecrire votre repense', 'red');
             

@@ -90,12 +90,31 @@ class reclamation_gestion
                 'reponse' => $reclamation->getRepense(),
 
             ]);
-            echo $query->rowCount() . " records UPDATED successfully <br>";
+           // echo $query->rowCount() . " records UPDATED successfully <br>";
         } catch (PDOException $e) {
             $e->getMessage();
         }
     }
  
+
+// fonction a3maltha bich itwarik les repenses imta3 il rajik ki ijaweb il client
+    function show_Notification($rec_)
+    {
+        $sql = "SELECT * FROM reclamation WHERE etat = :etat";
+        $config = new Config();
+        $db = $config->getConexion();
+        try {
+            $query = $db->prepare($sql);
+            $query->bindParam(':etat', $rec_);
+            $query->execute();
+    
+            $notifications = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $notifications;
+        } catch (Exception $e) {
+            die('Error: ' . $e->getMessage());
+        }
+    }
+    
 
   
 }
