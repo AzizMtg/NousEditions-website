@@ -151,7 +151,22 @@ try {
         
         <title>Reclamation</title>
         <link rel="stylesheet" href="../../View/memorial/chaimaV1/reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
-    </head>
+    
+
+        <style>
+        .sizeimg
+        { 
+         width : 40px ; 
+         height : 40px ; 
+        }
+        .sizeimg:hover
+        { 
+         width : 60px ; 
+         height : 60px ; 
+        }
+        <
+        </style>
+        </head>
     <body>
         <header>
             <!-- header inner -->
@@ -203,7 +218,10 @@ try {
          <section >
             <div class="reclamation-box">
                 <div class="reclamation-left">
+                <a href="../../view/memorial/chaimaV1/reclamationC.php"><img class="sizeimg" src="../../view/memorial/chaimaV1/retourne_fleche.png"></a> 
+                <br><br>
                     <h3 >Message has been sent</h3>
+
                 </div>   
             <div>    
         </section>

@@ -137,7 +137,8 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
                            <?php echo $reclamation['reponse']; ?>
                        </div>
                        
-                      <a href="repense_reclamation_tableau.php" class="but">Retourne</a>
+                     <a href="repense_reclamation_tableau.php" class="but">Retourne</a>
+
                    
                 </form>
  
