@@ -22,7 +22,6 @@
 
     .hov:hover
       {
-         background-color: gray;
          border-radius: 20px;
          padding: 20px;
       }
@@ -32,7 +31,7 @@
          height: 25px;
          margin-bottom:25px;
       }
-     
+ 
       .h3
       {
          display: inline-block;
@@ -40,10 +39,12 @@
       }
       .h3:hover
       {
-         display: inline-block;
+         
          font-size: 20px;
-         color: white;
+         color: #b32137 ;
          padding: 5px;
+         margin-right:10px;
+
       }
      
    </style>

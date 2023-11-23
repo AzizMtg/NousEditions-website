@@ -55,6 +55,14 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
          color: black;
 
       }
+      #r
+      {
+        font-size: 15px;
+        font-weight: bold;
+
+        
+
+      }
    </style>
 </head>
 <body>
@@ -108,24 +116,24 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
      <section >
         <div class="reclamation-box">
             <div class="reclamation-left">
-            <h3 id="titre"> reclamation pour le client N : <?= $reclamation['id']; ?></h3>
+            <h3 id="titre"> Repense A la Reclamation pour le client  : <?= $reclamation['nom'];  ?> <?= $reclamation['prenom'];  ?> </h3>
                 <!---              FORMMMMMMMMMMMMMM        -->
              
                 <form id="form"  >
                 
                        <div id="divgrid"  >
-                          <label for="suijet" id="r">Subject du Reclamation</label>
+                          <label for="suijet" id="r">Subject du Reclamation :</label>
                           <?php echo $reclamation['sujet']; ?>
                       </div>
  
                    
                        <div id="divgrid" >
-                           <label for="textarea" id="r">Message du Reclamation</label>
+                           <label for="textarea" id="r">Message du Reclamation :</label>
                            <?php echo $reclamation['message']; ?>
                        </div>
 
                        <div id="divgrid" >
-                           <label for="textarea" id="r">Repense du Reclamation</label>
+                           <label for="textarea" id="r">Repense du Reclamation :</label>
                            <?php echo $reclamation['reponse']; ?>
                        </div>
                        
