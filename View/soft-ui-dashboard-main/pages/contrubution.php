@@ -38,30 +38,32 @@
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 
   <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            border: 1px solid #ddd;
-            font-family: Arial, sans-serif;
-        }
+       table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Adjust the font size */
+}
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduce padding for table cells */
+    text-align: left;
+}
 
-        th {
-            background-color: #f2f2f2;
-        }
+th {
+    background-color: #f2f2f2;
+}
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-        tr:hover {
-            background-color: #f2f2f2;
-        }
+tr:hover {
+    background-color: #f2f2f2;
+}
+
     </style>
 
 <style>
@@ -84,8 +86,10 @@
     
   
   </style>
+<!-- DATATABLES -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
 
-  
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -457,7 +461,7 @@
     <!--  //////////////////////////////////////////////// AZIZ TERRITORY ////////////////////////////////////////// -->
     <center>
     <h2>Contributions</h2>
-    <table>
+    <table id="myTable">
         <thead>
             <tr>
                 <th>ID</th>
@@ -504,9 +508,9 @@
  <!--  //////////////////////////////////////////////// AZIZ TERRITORY END ////////////////////////////////////////// -->
   </main>
   <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+    <!--<a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
-    </a>
+    </a> -->
     <div class="card shadow-lg ">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
@@ -758,6 +762,16 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+<!--  DATATABLES -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+  });
+</script>
 </body>
 
 </html>
