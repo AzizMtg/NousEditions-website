@@ -1,7 +1,15 @@
 <?php
+<<<<<<< Updated upstream
 	include '../../Controller/Siwar/LivresC.php';
    //include '../soft-ui-dashboard-main/Livres/image';
 
+=======
+
+
+	include '../../Controller/Siwar/LivresC.php';
+   //include '../soft-ui-dashboard-main/Livres/image';
+   session_start();
+>>>>>>> Stashed changes
 
     $LivreC = new LivreC();
 
@@ -17,7 +25,10 @@
   }
 
 
+<<<<<<< Updated upstream
 	 
+=======
+>>>>>>> Stashed changes
    
 ?>
 <!DOCTYPE html>
@@ -203,16 +214,41 @@
             <th>Prix avec remise</th>
 				<!--<th>Stock</th>-->
 				<!--<th>Description</th>
+<<<<<<< Updated upstream
             <th>Voir Détails</th>-->
 			</tr>
 			</thead>
+=======
+            <th>Voir Détails</th>-->*
+
+			</tr>
+			</thead>
+  
+      <form id="cart" style="display: none;" action="panier.php" method="get">
+  <h2>Shopping Cart</h2>
+  <ul id="cart-items">
+    <!-- Cart items will be added here -->
+  </ul>
+  <p id="totalPrice">Total Price: </p>
+  <button type="submit">Proceed to Checkout</button>
+</form>
+
+
+      
+      
+
+>>>>>>> Stashed changes
       <?php
 		
 				foreach($listeLivres as $livre){
 			?>
                   <tr>
             <h1><td><img style="max-width: 50%;max-height=50%" src="../soft-ui-dashboard-main/Livres/image/<?php echo $livre['couverture']; ?>"></td></h1>
+<<<<<<< Updated upstream
             <td class="black-laurel-text"><?php echo $livre['nom']; ?></td>
+=======
+            <td class="black-laurel-text" id="nomliv"><?php echo $livre['nom']; ?></td>
+>>>>>>> Stashed changes
             <!--<td><?php echo $livre['nom']; ?></td>-->
 				<td class="banana-yellow-text"><?php echo $livre['auteur']; ?></td>
             <td><del><?php echo $livre['prix']; ?></del></td>
@@ -229,6 +265,10 @@
           $hasDiscount = $taux > 0;
           echo "<td" . ($hasDiscount ? "class='discounted-price'" :"") . ">$prixWithDiscount tnd</td>";
           ?>
+<<<<<<< Updated upstream
+=======
+          
+>>>>>>> Stashed changes
         </td>
         
 				<!--<td><?php echo $livre['stock']; ?></td>--->
@@ -239,10 +279,35 @@
 						<input type="hidden"  value=<?php echo $livre['idL']; ?>  name="idL">  
 					</form>
 				</td>
+<<<<<<< Updated upstream
+=======
+
+             <td>
+              <div>
+                       <input type="number" id="quantity" value="1" min="1" >
+               </div>
+
+      
+             </td>
+
+            <td>
+            <input type="button" id="cart-items" value="Add To Cart" onclick="addToCart(this)">        
+             </td>
+             <td>
+              <input type="hidden" value="<?php echo $livre['idL']; ?> " id="idl">
+              <input type="hidden" value="<?php echo $prixWithDiscount; ?> " id="prixliv">
+
+              </td>
+            
+         
+ 
+
+>>>>>>> Stashed changes
 			</tr>
 			<?php
 				}
 			?>
+<<<<<<< Updated upstream
                 </table>
          </div>
       </div>
@@ -282,6 +347,181 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+=======
+  
+                </table>
+
+   
+
+
+
+
+
+
+
+
+<script>
+
+function addToCart(button) {
+var row = button.parentNode.parentNode; // Get the parent row of the button clicked
+var idliv = row.querySelector("#idl").value;
+var nomliv = row.querySelector("#nomliv").innerText;
+var prixliv = row.querySelector("#prixliv").value;
+var quantite = row.querySelector("#quantity").value;
+
+// Create a new cart item object
+var cartItem = {
+id: idliv,
+name: nomliv,
+price: prixliv,
+quantity: quantite 
+};
+
+// Get the cart container and add the item details to the cart
+var cartContainer = document.getElementById("cart-items");
+
+// Create list items for each variable and add them to the cart list
+// Check if the item already exists in the cart
+
+var existingItem = Array.from(cartContainer.children).find(item => {
+return item.dataset.id === cartItem.id;
+});
+
+if (existingItem) { 
+
+// Update quantity if the item already exists in the cart
+var existingQuantityElem = existingItem.querySelector(".cart-quantity");
+var cartQuantityText = existingQuantityElem.textContent;
+var existingQuantity = parseInt(cartQuantityText.substring(cartQuantityText.indexOf(":") + 1).trim());
+
+var newQuantity = existingQuantity + parseInt(cartItem.quantity);
+existingQuantityElem.textContent = "Quantity: " + newQuantity;
+
+
+
+
+
+
+parseInt( existingItem.querySelector(".cart-quantity")).textContent = newQuantity;
+console.log(newQuantity);
+
+
+//price now
+var existingpriceelem = existingItem.querySelector(".cart-price");
+var cartPriceText = existingpriceelem.textContent;
+var existingprice = parseInt(cartPriceText.substring(cartPriceText.indexOf(":") + 1).trim());
+var newPrice = existingprice + parseInt(cartItem.price);
+existingpriceelem.textContent = "Price: " + newPrice;
+parseInt( existingItem.querySelector(".cart-price")).textContent = newPrice;
+
+
+
+} else {
+// Create new list items for the new item and add them to the cart list
+var listItem = document.createElement("li");
+listItem.dataset.id = cartItem.id;
+
+var idItem = document.createElement("p");
+idItem.textContent = "ID: " + cartItem.id;
+
+var nameItem = document.createElement("p");
+nameItem.textContent = "Name: " + cartItem.name;
+
+var priceItem = document.createElement("p");
+priceItem.textContent = "Price: " + cartItem.price;
+priceItem.classList.add("cart-price");
+
+var quantityItem = document.createElement("p");
+quantityItem.textContent = "Quantity: " + cartItem.quantity;
+quantityItem.classList.add("cart-quantity");
+console.log(cart-quantity);
+
+
+// Append list items to the cart list
+listItem.appendChild(idItem);
+listItem.appendChild(nameItem);
+listItem.appendChild(priceItem);
+listItem.appendChild(quantityItem);
+
+// Append the new item to the cart
+cartContainer.appendChild(listItem);
+}
+
+var cartItems = Array.from(cartContainer.children);
+var totalPrice = cartItems.reduce((total, item) => {
+var priceText = item.querySelector(".cart-price").textContent;
+var price = parseInt(priceText.substring(priceText.indexOf(":") + 1).trim());
+return total + price;
+}, 0);
+
+// Update total price display
+document.getElementById("totalPrice").textContent = "Total Price: " + totalPrice;
+
+/*****************************************/
+var form = document.getElementById("cart");
+
+var idInput = document.createElement("input");
+idInput.setAttribute("type", "hidden");
+idInput.setAttribute("name", "id[]");
+idInput.setAttribute("value", cartItem.id);
+
+var nameInput = document.createElement("input");
+nameInput.setAttribute("type", "hidden");
+nameInput.setAttribute("name", "name[]");
+nameInput.setAttribute("value", cartItem.name);
+
+var priceInput = document.createElement("input");
+priceInput.setAttribute("type", "hidden");
+priceInput.setAttribute("name", "price[]");
+priceInput.setAttribute("value", cartItem.price);
+
+
+var quantityInput = document.createElement("input");
+quantityInput.setAttribute("type", "hidden");
+quantityInput.setAttribute("name", "quantity[]");
+quantityInput.setAttribute("value", cartItem.quantity);
+
+
+var prixinput = document.createElement("input");
+prixinput.setAttribute("type", "hidden");
+prixinput.setAttribute("name", "prixtotal");
+prixinput.setAttribute("value", totalPrice);
+
+// Append the input fields to the form
+form.appendChild(idInput);
+form.appendChild(nameInput);
+form.appendChild(priceInput);
+form.appendChild(quantityInput);
+form.appendChild(prixinput);
+
+
+document.getElementById("cart").style.display = "block";
+
+}
+</script>
+
+<?php
+
+
+echo $_SESSION['email'];
+echo $_SESSION['idClient'];
+
+
+
+
+?>
+
+               
+      
+  <!-- Your HTML/PHP code -->
+
+<!-- Cart display area -->
+
+
+
+
+
+>>>>>>> Stashed changes
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>

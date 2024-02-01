@@ -1,0 +1,28 @@
+.about .about-box  form div {
+
+    display: grid;
+    grid-template-columns: 150px 300px ;
+
+
+    
+
+}
+.inchallahti5dim
+{
+
+
+border : solid ; 
+padding: 100px;
+margin-right: 100px;
+border-radius: 50px 5px;
+
+}
+
+.btn
+{
+    background-color:#87CEFA;
+   width: 200px;
+    margin-left: 220px;
+}
+
+

@@ -2,9 +2,16 @@
 
 <?php
 //include '../../../Model/promotion.php';
+<<<<<<< Updated upstream
 //include_once '../../../Controller/promotionC.php';
 include '../../../Model/Siwar/promotion.php';
 include_once '../../../Controller/Siwar/promotionC.php';
+=======
+include '../../../Model/Siwar/promotion.php';
+//include_once '../../../Controller/promotionC.php';
+include '../../../Controller/Siwar/promotionC.php';
+
+>>>>>>> Stashed changes
 
 $errorMessage = "";
 $successMessage = "" ;
@@ -279,6 +286,7 @@ if (
                 </div>
             </div>
 
+<<<<<<< Updated upstream
             <!---------------------------------------------dateDebut---------------------------------------------->
             <div class="input-group mb-3">
             <label class="col-sm-3 col-form-label ">dateDebut</label>
@@ -293,6 +301,37 @@ if (
                     <input type="date" class="form-control" name="dateFin" id="dateFin"  placeholder= "dateFin">
                 </div>
             </div>
+=======
+           
+            
+
+<!---------------------------------------------dateDebut---------------------------------------------->
+<script>
+    function updateDateFinMin() {
+        var dateDebutInput = document.getElementById('dateDebut');
+        var dateFinInput = document.getElementById('dateFin');
+
+        // Set the minimum date for dateFin to the selected value of dateDebut
+        dateFinInput.min = dateDebutInput.value;
+    }
+</script>
+<div class="row mb-3">
+    <label class="col-sm-3 col-form-label">dateDebut</label>
+    <div class="col-sm-6">
+        <input type="date" class="form-control" name="dateDebut" id="dateDebut" placeholder="dateDebut" onchange="updateDateFinMin()">
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label class="col-sm-3 col-form-label">dateFin</label>
+    <div class="col-sm-6">
+        <input type="date" class="form-control" name="dateFin" id="dateFin" min="">
+    </div>
+</div>
+
+
+
+>>>>>>> Stashed changes
             <!---------------------------------------------Buttons---------------------------------------------->
 
              <div class="row mb-5">

@@ -1,9 +1,15 @@
 <?php
 session_start();
+<<<<<<< Updated upstream
 echo $_SESSION['email'];
 
 
 
+=======
+//echo $_SESSION['email'];
+//echo $_SESSION['idClient']; 
+//echo $_SESSION['address'];
+>>>>>>> Stashed changes
 
 ?>
 
@@ -35,6 +41,25 @@ echo $_SESSION['email'];
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+<<<<<<< Updated upstream
+=======
+  
+  <style>
+   .selectio
+   {
+      background-color: #D3D3D3;
+      
+   }
+   .selection1
+   {
+      background-color: #FA8072;
+
+   }
+  </style> 
+  
+  
+  
+>>>>>>> Stashed changes
    </head>
    <!-- body -->
    <body class="main-layout home_page">
@@ -61,6 +86,7 @@ echo $_SESSION['email'];
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
+<<<<<<< Updated upstream
                                  <li class="active"> <a href="index.html">Home</a> </li>
                                  <li> <a href="about.html">About us</a> </li>
                                  <li><a href="books.html">Our Books</a></li>
@@ -68,6 +94,14 @@ echo $_SESSION['email'];
                                  <li><a href="contact.html">Contact us</a></li>
                                  <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                                  <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
+=======
+                                 <li class="active"> <a href="index.php">Home</a> </li>
+                                 <li> <a href="books - Copie.php">Our Books</a> </li>
+                                 <li><a href="http://127.0.0.1:5000">ChatBot</a></li>
+                                 <li><a href="reclamationC.php">Reclamer</a></li>
+                                 <li><a href="contribution.php">Contribuer</a></li>
+                                 <li class="mean-last"> <a href="changerprofil.php"><img src="images/top-icon.png" alt="#" /></a> </li>
+>>>>>>> Stashed changes
                               </ul>
                               <a href="deconnexion.php">
                                  <button> Se déconnecter</button>
@@ -88,6 +122,7 @@ echo $_SESSION['email'];
          <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
             <div class="carousel-inner">
                <div class="carousel-item active">
+<<<<<<< Updated upstream
                   <img class="first-slide" src="images/banner.jpg" alt="First slide">
                   <div class="container">
                      <div class="carousel-caption relative">
@@ -100,10 +135,20 @@ echo $_SESSION['email'];
                            <li> <a href="#"><img src="icon/linkedin.png"></a></li>
                            <li> <a href="#"><img src="icon/instagram.png"></a></li>
                         </ul>
+=======
+                  <img class="first-slide" src="menuuu.jpg" alt="First slide"style="height: 1000px; width: 3467px ">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                        <h1 >  Bienvenue a Nous Éditions <br><mark class="selectio">  <?php echo $_SESSION['firstName'];  ?> . </mark><br><br>
+                        <p >Appuyez sur ce bouton pour explorer<br> notre librairie de livres. Découvrez notre<br></p><p> sélection soigneusement choisie.</p>
+                        <div class="button_section"> <a class="main_bt" href="books - Copie.php">Consulter Librairie</a>  </div>
+                        
+>>>>>>> Stashed changes
                      </div>
                   </div>
                </div>
                <div class="carousel-item">
+<<<<<<< Updated upstream
                   <img class="second-slide" src="images/banner.jpg" alt="Second slide">
                   <div class="container">
                      <div class="carousel-caption relative">
@@ -116,10 +161,20 @@ echo $_SESSION['email'];
                            <li> <a href="#"><img src="icon/linkedin.png"></a></li>
                            <li> <a href="#"><img src="icon/instagram.png"></a></li>
                         </ul>
+=======
+                  <img class="second-slide" src="menu3.jpg" alt="Second slide" style="height: 1100px; width: 3467px ">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                     <h1>Vous êtes un écrivain en quête de<br><mark class="selection1">   soumettre votre propre livre?</h1></mark>  
+                        <p>Appuyez sur ce bouton pour remplir<br> un formulaire. Puis Soumettre<br> votre livre!.</p>
+                        <div class="button_section"> <a class="main_bt" href="contribution.php">Soumettre Votre Livre</a>  </div>
+                        
+>>>>>>> Stashed changes
                      </div>
                   </div>
                </div>
                <div class="carousel-item">
+<<<<<<< Updated upstream
                   <img class="third-slide" src="images/banner.jpg" alt="Third slide">
                   <div class="container">
                      <div class="carousel-caption relative">
@@ -131,11 +186,27 @@ echo $_SESSION['email'];
                            <li> <a href="#"><img src="icon/Twitter.png"></a></li>
                            <li> <a href="#"><img src="icon/linkedin.png"></a></li>
                            <li> <a href="#"><img src="icon/instagram.png"></a></li>
+=======
+                  <img class="third-slide" src="menu2.jpg" alt="Third slide">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                        <h1>Besoin d'aide ? Rencontrez notre <br>Chatbot <mark class="selection1">  Nous-Bot! </mark></h1>
+                        <p>Appuyez sur ce bouton pour interagir<br> avec notre assistant virtuel<br> pour une assistance instantanée!<br></p>
+
+                        <div class="button_section"> <a class="main_bt" href="http://127.0.0.1:5000">Discutez avec notre Chatbot</a>  </div>
+                        <ul class="locat_icon">
+                           <li> <a href="https://www.facebook.com/NOUSedition"><img src="icon/facebook.png"></a></li>
+                           
+>>>>>>> Stashed changes
                         </ul>
                      </div>
                   </div>
                </div>
             </div>
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -145,7 +216,10 @@ echo $_SESSION['email'];
             <span class="sr-only">Next</span>
             </a>
          </div>
+<<<<<<< Updated upstream
          
+=======
+>>>>>>> Stashed changes
       </section>
       <!-- about -->
       <div class="about">
@@ -153,15 +227,28 @@ echo $_SESSION['email'];
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="aboutheading">
+<<<<<<< Updated upstream
                      <h2>About <strong class="black">Us</strong></h2>
                      <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
+=======
+                     <h2>C'est Quoi <strong class="black">Nous Editions ?</strong></h2>
+                     <span>Une plateforme littéraire passionnée qui donne vie à des récits captivants. En tant que distributeur et éditeur, Nous Éditions offre une sélection soigneusement choisie de livres uniques.</span>
+>>>>>>> Stashed changes
                   </div>
                </div>
             </div>
             <div class="row border">
                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
                   <div class="about-box">
+<<<<<<< Updated upstream
                      <p> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+=======
+                     <p> Bienvenue chez Nous Éditions, une maison passionnée dédiée à l'art intemporel de la narration. Nous ne sommes pas simplement des éditeurs, mais des gardiens de récits exceptionnels qui captivent, inspirent et transcendent les frontières.
+
+Notre mission est de soutenir les auteurs dans leur quête créative, de façonner des œuvres uniques et de les partager avec le monde. Chez Nous Éditions, chaque livre est une aventure, chaque mot est soigneusement choisi pour tisser une expérience littéraire inoubliable.
+
+Fiers de notre rôle de distributeur passionné, nous connectons les lecteurs avides aux trésors littéraires qui enrichissent l'âme. Explorez notre univers, plongez dans nos pages et découvrez l'extraordinaire monde de la littérature avec Nous Éditions.</p>
+>>>>>>> Stashed changes
                      <a href="#">Read More</a>
                   </div>
                </div>
@@ -174,6 +261,7 @@ echo $_SESSION['email'];
          </div>
       </div>
       
+<<<<<<< Updated upstream
       
       <!-- end about -->
       <!-- Library -->
@@ -319,6 +407,19 @@ echo $_SESSION['email'];
             </div>
          </div>
       </footer>
+=======
+      <!-- end about -->
+      <!-- Library -->
+   
+      <!-- end Library -->
+      <!--Books -->
+      
+           
+    
+      <!-- end Contact -->
+      <!-- footer -->
+     
+>>>>>>> Stashed changes
       <!-- end footer -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>

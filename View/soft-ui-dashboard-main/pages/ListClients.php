@@ -29,13 +29,28 @@ $list = $clientC->listClients();
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+<<<<<<< Updated upstream
+=======
+  <!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<!-- DataTables JavaScript -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+>>>>>>> Stashed changes
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+<<<<<<< Updated upstream
       <a class="navbar-brand m-0" href="../../memorial/index.html" target="_blank">
+=======
+      <a class="navbar-brand m-0" href="../memorial/connexion2.php" target="_blank">
+>>>>>>> Stashed changes
         <img src="../assets/img/nousEditon.jpg" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">Nous Edition</span>
       </a>
@@ -63,6 +78,7 @@ $list = $clientC->listClients();
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+<<<<<<< Updated upstream
         <li class="nav-item">
           <a class="nav-link  " href="clients.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -85,6 +101,11 @@ $list = $clientC->listClients();
         </li>
         <li class="nav-item">
           <a class="nav-link  " href="books.html">
+=======
+        
+        <li class="nav-item">
+          <a class="nav-link  " href="../Livres/AfficherLivres.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -104,7 +125,11 @@ $list = $clientC->listClients();
           </a>
         </li>
         <li class="nav-item">
+<<<<<<< Updated upstream
           <a class="nav-link  " href="commands.html">
+=======
+          <a class="nav-link  " href="commande.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -125,7 +150,11 @@ $list = $clientC->listClients();
           </a>
         </li>
         <li class="nav-item">
+<<<<<<< Updated upstream
           <a class="nav-link  " href="contrubution.html">
+=======
+          <a class="nav-link  " href="contrubution.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -146,7 +175,11 @@ $list = $clientC->listClients();
           </a>
         </li>
         <li class="nav-item">
+<<<<<<< Updated upstream
           <a class="nav-link  " href="reclamation.html">
+=======
+          <a class="nav-link  " href="../reclamation.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -168,7 +201,11 @@ $list = $clientC->listClients();
         </li>
 
         <li class="nav-item">
+<<<<<<< Updated upstream
           <a class="nav-link  " href="promotion.html">
+=======
+          <a class="nav-link  " href="../Livres/AfficherPromotion.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -190,7 +227,11 @@ $list = $clientC->listClients();
         </li>
 
         <li class="nav-item">
+<<<<<<< Updated upstream
           <a class="nav-link  " href="statistic.html">
+=======
+          <a class="nav-link  " href="statistic.php">
+>>>>>>> Stashed changes
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -210,6 +251,7 @@ $list = $clientC->listClients();
             <span class="nav-link-text ms-1">Statistics</span>
           </a>
         </li>
+<<<<<<< Updated upstream
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
@@ -276,6 +318,9 @@ $list = $clientC->listClients();
             <span class="nav-link-text ms-1">Sign Up</span>
           </a>
         </li>
+=======
+       
+>>>>>>> Stashed changes
       </ul>
     </div>
    
@@ -399,12 +444,25 @@ $list = $clientC->listClients();
     </nav>
     <div>
     <center>
+<<<<<<< Updated upstream
         <h1>List of clients</h1>
         <h2>
             <a href="addClient.php">Add Client</a>
         </h2>
     </center>
     <table border="1" align="center" width="70%">
+=======
+        <h1>Liste des clients</h1>
+        <h2>
+            <a href="addClient.php">Ajouter admin</a>
+        </h2>
+    </center>
+    <!--<table border="1" align="center" width="70%" >-->
+    <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table datatable">
+                  <thead>
+>>>>>>> Stashed changes
         <tr>
             <th>Id Client</th>
             <th>First Name</th>
@@ -416,6 +474,11 @@ $list = $clientC->listClients();
             <th>Update</th>
             <th>Delete</th>
         </tr>
+<<<<<<< Updated upstream
+=======
+</thead>
+
+>>>>>>> Stashed changes
         <?php
         foreach ($list as $client) {
         ?>
@@ -429,7 +492,11 @@ $list = $clientC->listClients();
                 <td><?= $client['telephone']; ?></td>
                 <td align="center">
                     <form method="POST" action="updateClient.php">
+<<<<<<< Updated upstream
                         <input type="submit" name="update" value="Update">
+=======
+                        <input type="submit" name="update" value="Update" class="btn btn-success btn-sm">
+>>>>>>> Stashed changes
                         <input type="hidden" value=<?PHP echo $client['idClient']; ?> name="idClient">
                     </form>
                 </td>
@@ -703,6 +770,27 @@ $list = $clientC->listClients();
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+<<<<<<< Updated upstream
+=======
+  <script>
+  $(document).ready(function () {
+    $('.table').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "responsive": true,
+      
+    });
+  });
+</script>
+<script>
+  $(document).ready( function () {
+    $('.table').DataTable();
+  });</script>
+>>>>>>> Stashed changes
 </body>
 
 </html>

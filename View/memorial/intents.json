@@ -1,0 +1,138 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Bonjour",
+        "Salem",
+        "cc",
+        "comment allez vous",
+        "Hello",
+        "ahla"
+      ],
+      "responses": [
+        "Bonjour et bienvenue chez NOUS EDITIONS!",
+        "Salut, ravi de vous accueillir sur NOUS EDITIONS!",
+        "Coucou! Bienvenu(e) sur le site de NOUS EDITIONS!",
+        "Bonsoir et bienvenue à NOUS EDITIONS!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["merci", "Thank you", "merci bcp", "thx"],
+      "responses": ["Derien!", "vous merci :D", "My pleasure :D"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which books do you have?",
+        "quels livres vous vendez?",
+        "vous vendez quoi?"
+      ],
+      "responses": [
+        "on vend des livres!",
+        "Nous editions vend des livres"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+
+    {
+      "tag": "contribution",
+      "patterns": [
+        "comment contribuer par mon livre?",
+        "est ce que je peux vous envoyer mon livre?",
+        "j'aimerais soumettre mon livre?",
+        "j'aimerais ajouter mon livre?",
+        "comment soumettre mon livre?"
+      ],
+      "responses": [
+        "Pour contribuer, rendez-vous dans l'onglet Contribuer et téléchargez votre livre.",
+        "Si vous souhaitez contribuer, accédez à l'onglet Contribution et envoyez votre livre.",
+        "Pour uploader votre propre livre, allez dans la section Contribution et suivez les instructions.", 
+        "Voulez-vous partager votre livre? Cliquez sur Contribution et ajoutez-le facilement."
+
+      ]
+    },
+
+    {
+      "tag": "MmeEmna",
+      "patterns": [
+        "Meilleur prof de projet web?",
+        "Quel est le meilleur prof de projet web?",
+        "C'est lequel le meilleur prof de projet web?",
+        "who is the best prof projet in esprit",
+        "meilleur prof projet?"
+      ],
+      "responses": [
+        "Attends, tu parles de la crème de la crème en prof de projet web? C'est forcément Madame Emna!",
+        "Si tu demandes qui est la rockstar du projet web, c'est clairement Madame Emna!",
+        "Oh là là, Madame Emna, elle déchire en tant que prof de projet web!", 
+        "Dans l'univers du projet web, Madame Emna brille comme une étoile!"
+
+      ]
+    },
+
+    {
+      "tag": "Ceo",
+      "patterns": [
+        "qui gere NOUS EDITIONS?",
+        "qui est en charge de NOUS?",
+        "C'est qui le CEO"
+        
+      ],
+      "responses": [
+        "Miss Zeineb BEN OTHMANE est la personne qui gère NOUS ÉDITIONS",
+        "Miss Zeineb BEN OTHMANE est responsable de NOUS.",
+        "Le CEO est Miss Zeineb BEN OTHMANE", 
+        "NOUS ÉDITIONS est dirigée par Miss Zeineb BEN OTHMANE"
+
+      ]
+    },
+
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

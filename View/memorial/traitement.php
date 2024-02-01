@@ -103,14 +103,23 @@ try {
     $mail->isSMTP();                         //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';    //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+<<<<<<< Updated upstream
     $mail->Username   = 'khaliltriki86@gmail.com'; //SMTP username (email utilisé pour envoyer le formulaire. Il doit etre celui de la validation en deux étapes et de création de mot de passe application !)
     $mail->Password   = 'piywsumrxtywbsth'; // SMTP password (regarder la vidéo pour voir comment avoir ce mot de passe)
+=======
+    $mail->Username   = 'azizsydma123456789@gmail.com'; //SMTP username (email utilisé pour envoyer le formulaire. Il doit etre celui de la validation en deux étapes et de création de mot de passe application !)
+    $mail->Password   = 'itle xkxw ksyo aljw'; // SMTP password (regarder la vidéo pour voir comment avoir ce mot de passe)
+>>>>>>> Stashed changes
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //Enable implicit TLS encryption
     $mail->Port       = 465;                                 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom('from@example.com', 'Nous Editions');
+<<<<<<< Updated upstream
     $mail->addAddress('khalil.triki@esprit.tn');     //Add a recipient
+=======
+    $mail->addAddress('mohamedaziz.maatoug@esprit.tn');     //Add a recipient
+>>>>>>> Stashed changes
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -120,7 +129,11 @@ try {
 
     $mail->send();
     echo 'Message has been sent';
+<<<<<<< Updated upstream
    // header("Location:connexion2.php"); 
+=======
+   header("Location:connexion2.php"); 
+>>>>>>> Stashed changes
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

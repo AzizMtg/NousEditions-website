@@ -1,7 +1,13 @@
 <?php
 
+<<<<<<< Updated upstream
 //include '../Controller/ClientC.php';
 include '../../Controller/KhalilTriki/ClientC.php';
+=======
+include '../../Controller/KhalilTriki/ClientC.php';
+
+
+>>>>>>> Stashed changes
 $error = "";
 
 // create client
@@ -57,7 +63,12 @@ if (
         );
 
         $clientC->addClient($client);
+<<<<<<< Updated upstream
         //header('Location: ListClients.php');
+=======
+        
+        header('Location:traitement.php');
+>>>>>>> Stashed changes
     } else {
         $error = "Missing information";
     }
@@ -168,7 +179,11 @@ if (
                   <div class="about-box">
                      <h2>Inscription</h2>
                      <form action="" method="POST" id="myForm">
+<<<<<<< Updated upstream
         <table border="1" align="center">
+=======
+        <table  align="center">
+>>>>>>> Stashed changes
 
             <tr>
                 <td>
@@ -196,7 +211,11 @@ if (
                     <label for="dob">Date of Birth:</label>
                 </td>
                 <td>
+<<<<<<< Updated upstream
                     <input type="date" name="dob" id="dob">
+=======
+                    <input type="date" name="dob" id="dob"  max="2010-01-01">
+>>>>>>> Stashed changes
                 </td>
             </tr>
             <tr>
@@ -298,5 +317,84 @@ if (
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+<<<<<<< Updated upstream
+=======
+      <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let myForm = document.getElementById('myForm');
+
+        myForm.addEventListener('submit', function (e) {
+            // Empêcher la soumission du formulaire en cas d'échec de la validation
+            if (!validateForm()) {
+                e.preventDefault();
+            }
+        });
+
+        function validateForm() {
+            let firstName = document.getElementById('firstName').value.trim();
+            let lastName = document.getElementById('lastName').value.trim();
+            let address = document.getElementById('address').value.trim();
+            let dob = document.getElementById('dob').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let telephone = document.getElementById('telephone').value.trim();
+
+            if (firstName === '') {
+                alert('Veuillez entrer votre prénom');
+                return false;
+            }
+
+            if (!isAlphabetic(firstName)) {
+                alert('Le prénom ne doit contenir que des lettres');
+                return false;
+            }
+
+            if (lastName === '') {
+                alert('Veuillez entrer votre nom de famille');
+                return false;
+            }
+
+            if (!isAlphabetic(lastName)) {
+                alert('Le nom de famille ne doit contenir que des lettres');
+                return false;
+            }
+
+            if (address === '') {
+                alert('Veuillez entrer votre adresse');
+                return false;
+            }
+            
+
+            if (dob === '') {
+                alert('Veuillez entrer votre date de naissance');
+                return false;
+            }
+
+            if (email === '') {
+                alert('Veuillez entrer votre adresse e-mail');
+                return false;
+            }
+
+            if (password === '') {
+                alert('Veuillez entrer votre mot de passe');
+                return false;
+            }
+            if (telephone === '') {
+                alert('Veuillez entrer votre télèphone');
+                return false;
+            }
+            // Ajoutez ici des règles de validation pour la date de naissance, le téléphone et le mot de passe
+            // Par exemple, vous pouvez vérifier le format de la date de naissance, la longueur du téléphone, etc.
+
+            return true; // Le formulaire est valide
+        }
+
+        function isAlphabetic(str) {
+            // Vérifie si la chaîne ne contient que des lettres
+            return /^[a-zA-Z]+$/.test(str);
+        }
+    });
+</script>
+>>>>>>> Stashed changes
    </body>
 </html>

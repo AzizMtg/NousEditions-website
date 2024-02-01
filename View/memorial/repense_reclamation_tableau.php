@@ -1,4 +1,10 @@
+<?php
+session_start();
+//echo $_SESSION['email'];
+//echo $_SESSION['idClient']; 
+//echo $_SESSION['address'];
 
+?>
 <!---------------------- liste repense --------------------------->
 <?php
 include '../../Controller/chaimaC/Gestion_Reclamation.php';
@@ -7,21 +13,33 @@ include '../../Controller/chaimaC/Gestion_Reclamation.php';
 $reclamation_gestion = new reclamation_gestion();
 
 
+$list = $reclamation_gestion->show_Notification('traiter',$_SESSION['idClient']);
+
+
+/// he8iiii i7keyet il delete bich yitfasa5 lil user kima il notification
+
 // inchoufou kan delete mawjoud wala le 
 if (isset($_GET["delete"]) && isset($_GET["id"])) {
-  $reclamtion_table =  $reclamation_gestion->showReclamation($_GET["id"]) ; 
-  //var_dump($reclamtion_table);
-  $reclamtion = new reclamation( $reclamtion_table['id'],$reclamtion_table['nom'], $reclamtion_table['prenom'], $reclamtion_table['email'], $reclamtion_table['sujet'] , $reclamtion_table['message'] );
-      
-  $reclamtion =$reclamtion->setEtat('traiter.'); 
-  $reclamtion =$reclamtion->setReponse($reclamtion_table['reponse']);  
+   $reclamtion_table =  $reclamation_gestion->showReclamation($_GET["id"]) ; 
+   //var_dump($reclamtion_table);
+   $date=date($reclamtion_table['date_envoie']); 
+   $reclamtion = new reclamation( $reclamtion_table['idReclamation'], $reclamtion_table['iduser'], new DateTime($date), $reclamtion_table['sujet'], $reclamtion_table['message'] );
+       
+   $reclamtion =$reclamtion->setEtat('Archive'); 
+  
+   $reclamation_gestion->updateReclamation($reclamtion, $_GET["id"]);
+
+/// update the reponse view
+$reponse_gestion = new reponse_gestion();
+$reponse_gestion->updateReponseEtat($_GET["id"], 'suppUse');
+
+  
+
+
  
-  $reclamation_gestion->updateReclamation($reclamtion, $_GET["id"]);
-
-
-
-}
-$list = $reclamation_gestion->show_Notification('traiter');
+   
+ 
+ }
 ?>
 
 
@@ -56,51 +74,78 @@ $list = $reclamation_gestion->show_Notification('traiter');
     <link rel="stylesheet" href="chaimaV1/reclamationCstyle.css"> <!--he8i a3maltha ana lil reclamation-->
 
 <style>
-  .table__body .header
-{
-    height: 150px;
 
-}
 
-mark 
+.messageN
 {
-   background-color: gray;
    color: white;
-   border-radius: 5px;
-   padding: 5px;
+
 }
+
+
 
 .talwin
 {
  cursor: pointer;
+ color: black;
+ font-weight: bold;
 
 }
 .talwin:hover
 {
 background-color: gray;
-padding: 5px;
-border-radius: 5px;
+padding: 8px;
+border-radius: 10px;
 color: white;
 
 
 }
 
 
-.but
-{
-   color:white ;
-   background-color:black ;
-   border-radius: 5px;
-   padding: 5px;
-   margin: 100px;
 
-}
-.but:hover
-{
-   background-color:gray ;
-   color: black;
 
-}
+/* animation lil 3inwaqn il kbir */
+.animation
+      {
+    margin-top: 0;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      animation:typing 10s  , cursor 5s step-end infinite alternate ;  
+      font-family: 'Merriweather', serif;
+
+
+      }
+@keyframes typing {
+            from {width : 0 ; }
+            
+        }
+
+
+        .reclamation-bg
+        {
+         padding-top:3px ;
+         margin-top: 115px;
+        }
+
+        table
+        {
+         background-image: url(chaimaV1/book3.jpeg);
+         background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+    
+      .retournimg
+      {
+         width:100px ;
+         margin-left: 30px;
+
+         
+      }
+      
+
 
 </style>
 </head>
@@ -131,15 +176,13 @@ color: white;
                     <div class="menu-area">
                        <div class="limit-box">
                           <nav class="main-menu">
-                             <ul class="menu-area-main">
-                                <li class="active"> <a href="index.html">Home</a> </li>
-                                <li> <a href="about.html">About us</a> </li>
-                                <li><a href="books.html">Our Books</a></li>
-                                <li><a href="library.html">library</a></li>
-                                <li><a href="contribution.html">Contribuer</a></li>
-                                <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
-                                <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
-                             </ul>
+                          <ul class="menu-area-main">
+                               
+                             
+                               <li><a href="index.php">Revenir a l'arriere</a></li>
+                               <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
+                               <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
+                            </ul>
                           </nav>
 
                        </div>
@@ -150,41 +193,57 @@ color: white;
 
               </div>
 
-           </div>
-           <a href="chaimaV1/reclamationC.php" class="but">Retourne</a>
+           </div> 
+         
+
+           <br><br>
+           <a href="reclamationC.php" class="but"><img class="retournimg"src="chaimaV1/retourne_fleche_blanc.png" ></a>
 
 
         </div> 
 <!---------------------------------------------nav bar---------------------------------------------->
 
-        <br> <br> <br> <br>
+        <br> <br>  
 
+        <div class="reclamation-bg">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                              <div class="reclamationtitle">
+                                  <h2 class="animation"> Mail Box </h2>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+<!---------------------------------------------bar---------------------------------------------->
 
         <?php
+
+
 // kan fama repense lil client rahi bich it8aharlik jadwal !
 if (!empty($list)) {
 ?>
-            <table>
-            
+              <table>
                 <tbody>       
                 <?php
                 $i=1 ; 
                  foreach ($list as $reclamation) {
                 ?>
                     <tr class="notification_tafsi5">
-                        <td><mark> MESSAGE Numero : <?= $i; ?> </td>
+                        <td class="messageN"> MESSAGE : <?= $i; ?> </td>
                      
-                        <td> <u>Sujet :<u> </td>
-                        <td><?= $reclamation['sujet']; ?></td>
+                        <td class="messageN" > <u>Sujet :</u> <?= $reclamation['sujet']; ?> </td>
+                        <td class="messageN" ><u> date d envoie : </u> <?= $reclamation['date_envoie']; ?></td>
 
                         <td>
-                        <a class="talwin" href="voir_repense_reclamation.php?id=<?php echo $reclamation['id']; ?>" target="_self">view</a>
+                        <a class="talwin" href="voir_repense_reclamation.php?id=<?php echo $reclamation['idReclamation']; ?>" target="_self">view</a>
                         </td>
                         
                         
-                        <td >
-                         <a class="talwin"  href="?delete=true&id=<?php echo $reclamation['id']; ?>" >Delete</a>
-                         <a class="talwin" onclick="deleteRow(this); return false;" ></a>
+                        <td class="notification_tafsi5">
+                            <a class="talwin" href="?delete=true&id=<?php echo $reclamation['idReclamation']; ?>" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
                         </td>
 
                           
@@ -197,27 +256,32 @@ if (!empty($list)) {
                 </tbody>
             </table>
 <!--- he8a il jadwal bich ifasah kima il historique ki tinzil 3ala delete -->
-            <script>
-                           function deleteRow(link) {
-                           // Confirm deletion
-                           if (confirm('mit2akid bich itfasa5 il repense ?')) {
+<td class="notification_tafsi5">
+    <a class="talwin" href="?delete=true&id=<?php echo $reclamation['idReclamation']; ?>" onclick="return confirm('Are you sure you want to delete this entry?')">Delete</a>
+</td>
+
+               <script>
+                  function deleteRow(link) {
+                     // Confirm deletion
+                     if (confirm('Are you sure you want to delete this entry?')) {
                            // Find the parent <tr> element and remove it
                            var row = link.closest('tr');
                            row.remove();
 
                            // Decrement the value of i for the remaining rows
                            updateMessageNumbers();
-                           }
-                           }
+                     }
+                  }
 
-                           function updateMessageNumbers() {
-                           var rows = document.querySelectorAll('.notification_tafsi5');
-                           rows.forEach(function (row, index) {
+                  function updateMessageNumbers() {
+                     var rows = document.querySelectorAll('.notification_tafsi5');
+                     rows.forEach(function (row, index) {
                            var messageNumber = index + 1;
                            row.querySelector('td:first-child').innerHTML = '<mark> MESSAGE Numero : ' + messageNumber + '</mark>';
-                           });
-                           }
-                           </script>
+                     });
+                  }
+               </script>
+
             
 
 

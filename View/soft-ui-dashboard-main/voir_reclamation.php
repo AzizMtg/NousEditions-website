@@ -5,14 +5,15 @@ include '../../Controller/chaimaC/Gestion_Reclamation.php';
 
 $reclamation_gestion = new reclamation_gestion();
 
-
-// inchoufou kan delete mawjoud wala le 
+/*
+///inchoufou kan delete mawjoud wala le 
 if (isset($_GET["delete"]) && isset($_GET["id"])) {
   $reclamation_gestion->deleteReclamation($_GET["id"]);
-}
+}*/
 
 // Fetch reclamation by id
 $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
+$client = $reclamation_gestion->showClient($reclamation["iduser"]);
 
 ?>
 
@@ -387,32 +388,32 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
     <section >
         <div class="reclamation-box">
             <div   class="reclamation-left">
-                <h3 id="titre"> reclamation pour le client N : <?= $reclamation['id']; ?></h3>
+                <h3 id="titre"> Reclamation du client  :</h3>
                 <!---              FORMMMMMMMMMMMMMM        -->
 
                 <form id="form"  >
                           
                          <div id="divgrid">
-                             <label for="nom" id="r">Non du client</label>
-                             <?php echo $reclamation['nom']; ?>
+                             <label for="nom" >Non du client</label>
+                             <?php echo $client['firstName']; ?>
                          </div>
                          <div id="divgrid">
-                            <label for="prenom" id="r">Prenom du client </label>
-                            <?php echo $reclamation['prenom']; ?>
+                            <label for="prenom" >Prenom du client </label>
+                            <?php echo $client['lastName']; ?>
                         </div>
 
                    <div id="divgrid" >
-                           <label for="email"id="r">Email du client</label>
-                           <?php echo $reclamation['email']; ?>
+                           <label for="email" >Email du client</label>
+                           <?php echo $client['email']; ?>
                        </div>
                        <div id="divgrid"  >
-                          <label for="suijet" id="r">Subject du Reclamation</label>
+                          <label for="suijet" >Subject du Reclamation</label>
                           <?php echo $reclamation['sujet']; ?>
                       </div>
  
                    
                        <div id="divgrid" >
-                           <label for="textarea" id="r">Message du Reclamation</label>
+                           <label for="textarea" >Message du Reclamation</label>
                            <?php echo $reclamation['message']; ?>
                        </div>
                        

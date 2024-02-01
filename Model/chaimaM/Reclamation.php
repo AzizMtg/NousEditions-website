@@ -1,51 +1,43 @@
 <?php
+/*********************  FAMA CLASS REPONSE WA CLASS RECLAMATION */
 class reclamation
 {
-    private ?int $id_reclamation = null;
-    private ?string $nom = null;
-    private ?string $prenom = null;
-    private ?string $email = null;
+    private ?int $idReclamation = null;
+    private ?string $iduser = null;
+    private ?DateTime $date_envoie = null;
     private ?string $sujet = null;
     private ?string $mess = null;
     private ?string $etat ;
-    private ?string $repense ;
 
 
-    public function __construct($id = null, $n, $p, $e, $s ,$m )
+
+    public function __construct($id , $user, $date, $s ,$m )
     {
-        $this->id_reclamation = $id;
-        $this->nom = $n;
-        $this->prenom = $p;
-        $this->email = $e;
+        $this->idReclamation = $id;
+        $this->iduser = $user;
+        $this->date_envoie = $date;
         $this->sujet = $s;
         $this->mess = $m;
     
 
     }
-    
+
 
     public function getIdReclamation()
     {
-        return $this->id_reclamation;
+        return $this->idReclamation;
     }
 
-    public function getNom()
+    public function idUser()
     {
-        return $this->nom;
+        return $this->iduser;
     }
 
-
-    public function getPrenom()
+    public function getDateEnvoie()
     {
-        return $this->prenom;
+        return $this->date_envoie;
     }
 
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    
     public function getSujet()
     {
         return $this->sujet;
@@ -60,22 +52,75 @@ class reclamation
         return $this->etat;
     }
 
-    public function getRepense()
-    {
-        return $this->repense;
-    }
-
     public function setEtat($etat) {
         $this->etat = $etat;
         return $this;
 
     }
-    public function setReponse($repnse) {
-        $this->repense = $repnse;
-        return $this;
+
+   
+}
+/***********************CLASS REPONSE  ********************************************/
+class reponse
+{
+    private ?int $idReponse = null;
+    private ?string $idReclamation = null;
+    private ?string $Reponse = null;
+    private ?DateTime $date_envoie_r = null;
+
+    private ?string $etat_rep ;
+   
+
+
+
+    public function __construct($id, $idReclamation, $Reponse, $date )
+    {
+        $this->idReponse = $id;
+        $this->idReclamation = $idReclamation;
+        $this->Reponse = $Reponse;
+        $this->date_envoie_r = $date;
+
+       
+    
 
     }
 
 
+    public function getidReponse()
+    {
+        return $this->idReponse;
+    }
+
+    public function getidReclamation()
+    {
+        return $this->idReclamation;
+    }
+
+    public function getReponse()
+    {
+        return $this->Reponse;
+    }
+
+
+    public function getDateEnvoie_r()
+    {
+        return $this->date_envoie_r;
+    }
+
+  
+    public function getEtat_rep()
+    {
+        return $this->etat_rep;
+    }
+   
+
+    public function setEtat_rep($etat_rep) {
+        $this->etat_rep = $etat_rep;
+        return $this;
+
+    }
+
+   
 
 }
+?>

@@ -1,9 +1,19 @@
 <?php
+<<<<<<< Updated upstream
 include '../../../Model/Siwar/promotion.php';
 include_once '../../../Controller/Siwar/promotionC.php';
 
 
     $error = "";
+=======
+//include '../../../Model/promotion.php';
+include '../../../Model/Siwar/promotion.php';
+//include_once '../../../Controller/promotionC.php';
+include '../../../Controller/Siwar/promotionC.php';
+
+
+$error = "";
+>>>>>>> Stashed changes
     $mess = "" ; 
 
 
@@ -12,6 +22,7 @@ include_once '../../../Controller/Siwar/promotionC.php';
 
     // create an instance of the controller
     $promotionC = new promotionC();
+<<<<<<< Updated upstream
     if (		
         isset($_POST["tauxRemise"]) &&
 		    isset($_POST["dateDebut"]) && 
@@ -20,12 +31,26 @@ include_once '../../../Controller/Siwar/promotionC.php';
         if (			
             !empty($_POST["tauxRemise"]) && 
 			      !empty($_POST["dateDebut"]) && 
+=======
+    if (    
+        isset($_POST["tauxRemise"]) &&
+        isset($_POST["dateDebut"]) && 
+        isset($_POST["dateFin"])) 
+        {
+        if (      
+            !empty($_POST["tauxRemise"]) && 
+            !empty($_POST["dateDebut"]) && 
+>>>>>>> Stashed changes
             !empty($_POST["dateFin"]) 
         ) {
 
             $promotion = new promotion(
                 $_POST['tauxRemise'], 
+<<<<<<< Updated upstream
 			        	$_POST['dateDebut'],
+=======
+                $_POST['dateDebut'],
+>>>>>>> Stashed changes
                 $_POST['dateFin']
             );
             $promotionC->Modifierpromotion($promotion,$_GET["idP"]);
@@ -390,11 +415,19 @@ include_once '../../../Controller/Siwar/promotionC.php';
             <center><h1>Modifier Promotion</h1></center>
             </div>
             <?php
+<<<<<<< Updated upstream
 			if (isset($_GET['idP'])){
 				$promotion = $promotionC->Recupererpromotion($_GET['idP']);
                 
 				
 		?>
+=======
+      if (isset($_GET['idP'])){
+        $promotion = $promotionC->Recupererpromotion($_GET['idP']);
+                
+        
+    ?>
+>>>>>>> Stashed changes
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
               <form method="post" class="form"  enctype="multipart/form-data" id="form">
@@ -434,7 +467,11 @@ include_once '../../../Controller/Siwar/promotionC.php';
               <?php
             } 
             
+<<<<<<< Updated upstream
 		?>
+=======
+    ?>
+>>>>>>> Stashed changes
             </div>
           </div>
         </div>

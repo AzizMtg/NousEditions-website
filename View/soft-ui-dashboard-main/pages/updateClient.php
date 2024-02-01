@@ -2,7 +2,10 @@
 
 include '../../../Controller/KhalilTriki/ClientC.php';
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 $error = "";
 
 // create client
@@ -475,7 +478,11 @@ if (
             <td>
                 <label for="idClient">Id Client:</label>
             </td>
+<<<<<<< Updated upstream
             <td><input type="text" name="idClient" id="idClient" value="<?php echo $client['idClient']; ?>" maxlength="20"></td>
+=======
+            <td><input type="text" name="idClient" id="idClient" value="<?php echo $client['idClient']; ?>" maxlength="20" readonly ></td>
+>>>>>>> Stashed changes
         </tr>
         <tr>
             <td>
@@ -503,7 +510,11 @@ if (
                 <label for="dob">Date of Birth:</label>
             </td>
             <td>
+<<<<<<< Updated upstream
                 <input type="date" name="dob" id="dob" value="<?php echo $client['dob']; ?>">
+=======
+                <input type="date" name="dob" id="dob" value="<?php echo $client['dob']; ?>"  max="2010-01-01">
+>>>>>>> Stashed changes
             </td>
         </tr>
         <tr>
@@ -519,7 +530,11 @@ if (
                 <label for="password">Password:</label>
             </td>
             <td>
+<<<<<<< Updated upstream
                 <input type="text" name="password" id="password" value="<?php echo $client['password']; ?>" maxlength="50">
+=======
+                <input type="password" name="password" id="password" value="<?php echo $client['password']; ?>" maxlength="50">
+>>>>>>> Stashed changes
             </td>
         </tr>
         <tr>
@@ -533,7 +548,11 @@ if (
         <tr>
             <td></td>
             <td>
+<<<<<<< Updated upstream
                 <input type="submit" value="Update">
+=======
+                <input type="submit" value="Update" class="btn btn-warning btn-sm">
+>>>>>>> Stashed changes
             </td>
             <td>
                 <input type="reset" value="Reset">

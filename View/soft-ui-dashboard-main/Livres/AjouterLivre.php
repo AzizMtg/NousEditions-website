@@ -2,10 +2,18 @@
 
 <?php
 //include '../../../Model/Livres.php';
+<<<<<<< Updated upstream
 //include_once '../../../Controller/LivresC.php';
 include '../../../Model/Siwar/Livres.php';
 include_once '../../../Controller/Siwar/LivresC.php';
 
+=======
+include '../../../Model/Siwar/Livres.php';
+//include_once '../../../Controller/LivresC.php';
+include_once '../../../Controller/Siwar/LivresC.php';
+
+
+>>>>>>> Stashed changes
 $errorMessage = "";
 $successMessage = "" ;
 
@@ -307,7 +315,11 @@ if (
             <div class="input-group mb-3">
             <label class="col-sm-3 col-form-label ">Prix</label>
                 <div class="col-sm-6">
+<<<<<<< Updated upstream
                     <input type="text" class="form-control" name="prix" id="prix"  placeholder= "prix">
+=======
+                    <input type="number" class="form-control" name="prix" id="prix"  placeholder= "prix"     min="1"         >
+>>>>>>> Stashed changes
                 </div>
             </div>
     

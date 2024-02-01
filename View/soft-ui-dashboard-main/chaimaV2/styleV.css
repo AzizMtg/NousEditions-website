@@ -239,22 +239,7 @@
      
   
   }
-  #r{
-    color: black;
-    font-family: 'Merriweather', serif;
-    font-weight: bold; 
-    font-size: 30px;
-    font-style: italic;
 
-  }
-  .r{
-    color: black;
-    font-family: 'Merriweather', serif;
-    font-weight: bold; 
-    font-size: 20px;
-    font-style: italic;
-
-  }
   #titre
   {
     color: black;
@@ -264,17 +249,7 @@
     text-decoration: underline; 
 
   }
-  .titre
-  {
-    color: black;
-    font-family: 'Merriweather', serif;
-    font-weight: bold; 
-    font-style: italic;
-    text-decoration: underline;
-    font-size: 30px;
  
-
-  }
    
 
   section {

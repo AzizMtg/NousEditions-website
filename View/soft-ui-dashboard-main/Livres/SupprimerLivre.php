@@ -1,4 +1,8 @@
 <?php
+<<<<<<< Updated upstream
+=======
+	//include '../../../Controller/LivresC.php';
+>>>>>>> Stashed changes
 	include '../../../Controller/Siwar/LivresC.php';
 
 	$message = "" ; 

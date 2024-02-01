@@ -523,6 +523,19 @@ foreach ($list as $contribution)
             </div>
           </div>
         </div>
+<<<<<<< Updated upstream
+=======
+
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="card">
+    <div class="card-body d-flex align-items-center justify-content-center p-3">
+      <a href="../soft-ui-dashboard-main/pages/contrubution.php" class="btn btn-primary">Voir Liste Contributions</a>
+    </div>
+  </div>
+</div>
+
+
+>>>>>>> Stashed changes
         <!--
         <div class="col-xl-3 col-sm-6">
           <div class="card">
@@ -546,6 +559,10 @@ foreach ($list as $contribution)
       </div>-->
       
       <div class="row mt-4 in7othafilwost">
+<<<<<<< Updated upstream
+=======
+        <center>
+>>>>>>> Stashed changes
         <div class="col-lg-5 mb-lg-0 mb-4">
           <div class="card z-index-2">
             <div class="card-body p-3">
@@ -594,6 +611,10 @@ foreach ($list as $contribution)
             </div>
           </div>
         </div>
+<<<<<<< Updated upstream
+=======
+        </center>
+>>>>>>> Stashed changes
         
 
         <script>

@@ -55,13 +55,14 @@ ul.location_icon2 li {
     
     }
     .reclamation-box{
-     background: rgb(255, 255, 255);
+     background: rgba(255, 255, 255, 0);
      display: flex ; 
+     justify-content: center;
     
     }
     .reclamation-left{
     flex-basis: 60%;
-    padding: 40px 60px;
+    padding: 0px 60px;
     
     }
    
@@ -123,6 +124,12 @@ ul.location_icon2 li {
     
     
     
+    }
+    form
+    {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
     }
    
 

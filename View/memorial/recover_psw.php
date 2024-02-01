@@ -67,7 +67,30 @@
 </html>
 
 <?php 
+<<<<<<< Updated upstream
     if(isset($_POST["recover"])){
+=======
+
+try {
+    // Change these values to match your database configuration
+    $host = 'localhost';
+    $dbname = 'nous editions';
+    $user = 'root';
+    $password = '';
+
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // If you want to display errors, uncomment the following line
+    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+    /*if(isset($_POST["recover"])){
+>>>>>>> Stashed changes
         include('connect/connection.php');
         $email = $_POST["email"];
 
@@ -136,5 +159,80 @@
         }
     }
 
+<<<<<<< Updated upstream
+=======
+*/
+if(isset($_POST["recover"])){
+    include('connect/connection.php');
+    $email = $_POST["email"];
+
+    $stmt = $pdo->prepare("SELECT * FROM client WHERE email=:email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $rowCount = $stmt->rowCount();
+    $fetch = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($rowCount <= 0){
+        ?>
+        <script>
+            alert("<?php echo "Sorry, no emails exist"; ?>");
+        </script>
+        <?php
+    } else {
+        // Generate token by random_bytes
+        $token = bin2hex(random_bytes(50));
+
+        session_start();
+        $_SESSION['token'] = $token;
+        $_SESSION['email'] = $email;
+
+        require "Mail/phpmailer/PHPMailerAutoload.php";
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+
+        // Gmail account
+        $mail->Username = 'azizsydma123456789@gmail.com';
+        $mail->Password = 'itle xkxw ksyo aljw';
+
+        // Send by Gmail
+        $mail->setFrom('email', 'Password Reset');
+        $mail->addAddress($_POST["email"]);
+
+        // HTML body
+        $mail->isHTML(true);
+        $mail->Subject = "Recover your password";
+        $mail->Body = "<b>Dear User</b>
+        <h3>We received a request to reset your password.</h3>
+        <p>Kindly click the below link to reset your password</p>
+        http://localhost:3000/View/memorial/reset_psw.php
+        <br><br>
+        <p>With regards,</p>
+        <b>Programming with Lam</b>";
+
+        if(!$mail->send()){
+            ?>
+            <script>
+                alert("<?php echo "Invalid Email"; ?>");
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("<?php echo "veulliez consulter votre email"; ?>");
+                window.location.replace("connexion2.php");
+            </script>
+            <?php
+        }
+    }
+}
+
+
+>>>>>>> Stashed changes
 
 ?>

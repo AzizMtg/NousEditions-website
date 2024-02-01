@@ -4,15 +4,16 @@ include '../../Controller/chaimaC/Gestion_Reclamation.php';
 
 
 $reclamation_gestion = new reclamation_gestion();
+$reponse_gestion = new reponse_gestion();
 
 
-// inchoufou kan delete mawjoud wala le 
-if (isset($_GET["delete"]) && isset($_GET["id"])) {
-  $reclamation_gestion->deleteReclamation($_GET["id"]);
-}
 
 // Fetch reclamation by id
 $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
+$client =  $reclamation_gestion->showClient($reclamation["iduser"])  ; 
+
+// fetch reponse by id reclamation
+$reponse_idR = $reponse_gestion->voir_repon($reclamation["idReclamation"],'mawjoud');
 
 ?>
 
@@ -40,29 +41,75 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
 
 
     <style>
+
+
+body{      background-image: url(chaimaV1/book3.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: white;
+         }
+/************** */
+
+.text2
+{
+   color: blue;
+   font-weight: bold;
+   font-size: 20px;
+}
+  
+ 
+
+/* animation lil 3inwaqn il kbir */
+      .animation
+      {
+
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      animation:typing 10s  , cursor 5s step-end infinite alternate ;  
+
+      }
+@keyframes typing {
+            from {width : 0 ; }
+            
+        }
+
+
+
       .but
       {
-         color:white ;
-         background-color:black ;
-         border-radius: 5px;
-         padding: 5px;
-         margin: 300px;
-
+         margin-left: 900px;
       }
-      .but:hover
+    
+      
+      .retournimg
       {
-         background-color:gray ;
-         color: black;
-
+         width:100px
+         
       }
-      #r
+      .reponsecontainer
       {
-        font-size: 15px;
-        font-weight: bold;
-
-        
-
+         background-color: #F0F0F0	;
+         padding-left: 10px;
       }
+      #form
+      {
+         background-color: white;
+         opacity: 0.8;
+      }
+    
+
+    
+
+
+      
+     
+
+     
+
+
+ 
    </style>
 </head>
 <body>
@@ -107,45 +154,78 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
            <div class="row">
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                  <div class="reclamationtitle">
-                    <h2>Reclamation</h2>
+                    <h2 class="animation" > answers</h2>
                  </div>
               </div>
            </div>
         </div>
      </div>
      <section >
-        <div class="reclamation-box">
-            <div class="reclamation-left">
-            <h3 id="titre"> Repense A la Reclamation pour le client  : <?= $reclamation['nom'];  ?> <?= $reclamation['prenom'];  ?> </h3>
-                <!---              FORMMMMMMMMMMMMMM        -->
-             
-                <form id="form"  >
-                
-                       <div id="divgrid"  >
-                          <label for="suijet" id="r">Subject du Reclamation :</label>
-                          <?php echo $reclamation['sujet']; ?>
-                      </div>
- 
-                   
-                       <div id="divgrid" >
-                           <label for="textarea" id="r">Message du Reclamation :</label>
-                           <?php echo $reclamation['message']; ?>
-                       </div>
 
-                       <div id="divgrid" >
-                           <label for="textarea" id="r">Repense du Reclamation :</label>
-                           <?php echo $reclamation['reponse']; ?>
-                       </div>
-                       
-                     <a href="repense_reclamation_tableau.php" class="but">Retourne</a>
+    
+     
+     <div class="reclamation-box">
+    <div class="reclamation-left">
+        <!---                      -->
+
+        <form id="form">
+            <h3 class="text"><u>Votre reclamtion a ete envoyee le <?php echo $reclamation['date_envoie']; ?>  : </u> </h3>
+            <label for="textarea">M<?php echo $reclamation['message']; ?></label>
+
+            <div id="divgrid">
+
+               <a href="#" class="but" onmouseover="toggleImage('chaimaV1/voir_reponse2.png')" onmouseout="toggleImage('chaimaV1/voir_reponse1.png')" onclick="toggleResponses()">
+                     <img id="responseImage" width="25" src="chaimaV1/voir_reponse1.png">
+              </a>
+         </div>
+
+            <div id="responsesContainer" style="display: none;" class="reponsecontainer">
+                <?php
+                $i = 1;
+                foreach ($reponse_idR as $reponse) {
+                    ?>
+                    <div>
+                        <hr>
+                        <label class="text2">Repense  <?= $i; ?> le  <?= $reponse['date_envoie_r']; ?>  : </label>
+                        <label> <?php echo $reponse['Reponse']; ?> </label>
+                        <hr>
+                    </div>
+                    <?php
+                    $i++;
+                }
+                ?>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function toggleResponses() {
+        var responsesContainer = document.getElementById('responsesContainer');
+        if (responsesContainer.style.display === 'none') {
+            responsesContainer.style.display = 'block';
+        } else {
+            responsesContainer.style.display = 'none';
+        }
+    }
+
+
+    
+function toggleImage(newSrc) {
+    var image = document.getElementById('responseImage');
+    image.src = newSrc;
+}
+</script>
+                      
+                   <br><br>
+                    <a href="repense_reclamation_tableau.php"><img class="retournimg"src="chaimaV1/retourne_fleche_blanc.png" ></a>
+
 
                    
-                </form>
+              
  
-           
-            </div>   
-        <div>    
+       
     </section>
+    <br><br>
   
       <!-- footer -->
       <footer>
@@ -170,6 +250,7 @@ $reclamation = $reclamation_gestion->showReclamation($_GET["id"]);
        
      </footer>
      <script src="reclamation_controle_saisie.js" ></script>
+
 
    
 </body>

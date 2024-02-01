@@ -87,7 +87,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <p>Telephone : +2169542489 Email: Zeinebbenothman@email.com</p>
             
+<<<<<<< Updated upstream
             <img src="https://scontent.ftun15-1.fna.fbcdn.net/v/t39.30808-6/277587577_386353796828688_6650999188134237628_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=sou9KemeCBkAX8whsK9&_nc_ht=scontent.ftun15-1.fna&oh=00_AfA6I4RJ0TFVp6tC8mGAb21zmhTs0cm100EkgglA3E7ifg&oe=656E7E56" alt="Equipe Nous Image"> <!-- Replace with the absolute URL to your footer image -->
+=======
+            <img src="https://scontent.ftun10-1.fna.fbcdn.net/v/t39.30808-6/277587577_386353796828688_6650999188134237628_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=FkP14v8uOhoAX8KkzW0&_nc_ht=scontent.ftun10-1.fna&oh=00_AfDX1BhFfVn3SsSpVDDo_qxDCPZ6UVeL5sMPTUAFEBN2DA&oe=65804A96" alt="Equipe Nous Image"> <!-- Replace with the absolute URL to your footer image -->
+>>>>>>> Stashed changes
         </div>
         </div>
     </body>

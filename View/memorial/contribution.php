@@ -1,3 +1,13 @@
+<<<<<<< Updated upstream
+=======
+<?php
+session_start();
+//echo $_SESSION['email'];
+//echo $_SESSION['idClient']; 
+
+
+?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -29,7 +39,11 @@
    <style>
 
 .Contact {
+<<<<<<< Updated upstream
    background-image: url('image.jpg'); /* Add the path to your image */
+=======
+   background-image: url('contrib.jpg'); /* Add the path to your image */
+>>>>>>> Stashed changes
    background-size: cover; /* Adjust as needed */
    background-repeat: no-repeat; /* Adjust as needed */
    /* Other styles for the contact section */
@@ -114,6 +128,7 @@
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
+<<<<<<< Updated upstream
                                  <li > <a href="index.html">Home</a> </li>
                                  <li> <a href="about.html">About us</a> </li>
                                  <li><a href="books.html">Our Books</a></li>
@@ -122,6 +137,14 @@
                                  <li class="active"><a href="contact.html">Contribuer</a></li>
                                  <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                                  <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
+=======
+                                 <li > <a href="index.php">Home</a> </li>
+                                 <li><a href="books - Copie.php">Our Books</a></li>
+                                 <li><a href="http://127.0.0.1:5000">ChatBot</a></li>
+                                 <li> <a href="reclamationC.php">Reclamer</a> </li>
+                                 <li class="active"><a href="contribution.php">Contribuer</a></li>
+                                 <li class="mean-last"> <a href="changerprofil.php"><img src="images/top-icon.png" alt="#" /></a> </li>
+>>>>>>> Stashed changes
                               </ul>
                            </nav>
                         </div>
@@ -158,7 +181,11 @@
                                 <input class="form-control" placeholder="Nom" name="name" type="text">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+<<<<<<< Updated upstream
                                 <input class="form-control" placeholder="Email" name="email" type="Email">
+=======
+                            <input class="form-control" placeholder="Email" name="email" type="Email" value="<?php echo $_SESSION['email'];?> " readonly>
+>>>>>>> Stashed changes
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <input class="form-control" placeholder="Numero tel" name="phone_nu" type="text">

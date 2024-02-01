@@ -15,7 +15,7 @@ class config
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
              ]);
             
-             echo "connecte" ; 
+             echo "........" ; 
         }
 
        catch (PDOException $e)

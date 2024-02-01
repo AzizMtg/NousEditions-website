@@ -1,5 +1,9 @@
 <?php session_start() ;
+<<<<<<< Updated upstream
 include('connect/connection.php');
+=======
+//include('connect/connection.php');
+>>>>>>> Stashed changes
 ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -70,8 +74,68 @@ include('connect/connection.php');
 </body>
 </html>
 <?php
+<<<<<<< Updated upstream
 
     if(isset($_POST["reset"])){
+=======
+try {
+    // Change these values to match your database configuration
+    $host = 'localhost';
+    $dbname = 'nous editions';
+    $user = 'root';
+    $password = '';
+
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
+
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // If you want to display errors, uncomment the following line
+    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+if(isset($_POST["reset"])){
+    //include('connect/connection.php');
+
+    $psw = $_POST["password"];
+    $token = $_SESSION['token'];
+    $email = $_SESSION['email'];
+
+    $hash = password_hash($psw, PASSWORD_DEFAULT);
+
+    $stmt = $pdo->prepare("SELECT * FROM client WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $fetch = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($fetch){
+        $new_pass = $hash;
+        
+        $updateStmt = $pdo->prepare("UPDATE client SET password = :password WHERE email = :email");
+        $updateStmt->bindParam(':password', $new_pass);
+        $updateStmt->bindParam(':email', $email);
+        $updateStmt->execute();
+
+        ?>
+        <script>
+            window.location.replace("connexion2.php");
+            alert("<?php echo "Your password has been successfully reset"; ?>");
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            alert("<?php echo "Please try again"; ?>");
+        </script>
+        <?php
+    }
+}
+   /* if(isset($_POST["reset"])){
+>>>>>>> Stashed changes
         include('connect/connection.php');
         $psw = $_POST["password"];
 
@@ -101,7 +165,11 @@ include('connect/connection.php');
             <?php
         }
     }
+<<<<<<< Updated upstream
 
+=======
+*/
+>>>>>>> Stashed changes
 ?>
 <script>
     const toggle = document.getElementById('togglePassword');

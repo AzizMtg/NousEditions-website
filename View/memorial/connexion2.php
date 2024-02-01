@@ -2,6 +2,10 @@
 session_start();
 include '../../Controller/KhalilTriki/ClientC.php';
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 // Inclure la configuration de la base de données
 //include('config.php'); // Assurez-vous de créer ce fichier avec les informations de connexion à la base de données
 
@@ -32,6 +36,7 @@ if(isset($_POST["connexion"]))
          foreach($result as $row){
             if(password_verify($_POST["password"],$row["password"])){
                //setcookie("type",$row["user_type"],time()+3600);
+<<<<<<< Updated upstream
                $_SESSION['email']=$email;
                
                if ($row['stat'] == 1) {
@@ -39,6 +44,21 @@ if(isset($_POST["connexion"]))
                   header("Location: ../View/ListClients.php");
               } elseif ($row['stat'] == 0) {
                   // Redirect to the client home page
+=======
+              
+               $_SESSION['email']=$email;
+               $_SESSION['idClient']=$row['idClient'];
+               //address
+               $_SESSION['address']=$row['address'];
+               $_SESSION['firstName']=$row['firstName'];
+               
+               if ($row['stat'] == 1) {
+                  // Redirect to the admin page
+                  header("Location: ../soft-ui-dashboard-main/pages/ListClients.php");
+              } elseif ($row['stat'] == 0) {
+                  // Redirect to the client home page
+                  
+>>>>>>> Stashed changes
                   header("Location: index.php");
               }
 
@@ -91,6 +111,22 @@ if(isset($_POST["connexion"]))
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+<<<<<<< Updated upstream
+=======
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+      <link rel="stylesheet" href="styleSignIN.css">
+
+
+      <style>
+         .inba3adhom
+         {
+            margin:30px;
+         }
+         
+      </style>
+>>>>>>> Stashed changes
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -117,11 +153,17 @@ if(isset($_POST["connexion"]))
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
+<<<<<<< Updated upstream
                                  <li > <a href="index.html"></a> </li>
                                  <li class="active"> <a href="about.html"></a> </li>
                                  <li><a href="books.html"></a></li>
                                  <li><a href="library.html"></a></li>
                                  <li><a href="contact.html"></a></li>
+=======
+                                
+                                 <li><a href="librairievisit.php" >Consulter Notre Librairie</a></li>
+                               
+>>>>>>> Stashed changes
                                  <li class="mean-last"> <a href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                                  <li class="mean-last"> <a href="#"><img src="images/top-icon.png" alt="#" /></a> </li>
                               </ul>
@@ -142,7 +184,11 @@ if(isset($_POST["connexion"]))
             <div class="row">
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                   <div class="abouttitle">
+<<<<<<< Updated upstream
                      <h2>Connexion</h2>
+=======
+                     <h2>Bienvenue a Nous Editions</h2>
+>>>>>>> Stashed changes
                   </div>
                </div>
             </div>
@@ -153,7 +199,11 @@ if(isset($_POST["connexion"]))
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="aboutheading">
+<<<<<<< Updated upstream
                      <span>Bienvenu dans nous editions</span>
+=======
+                     <span>Veuiller vous connecter</span>
+>>>>>>> Stashed changes
                      
                   </div>
                </div>
@@ -163,6 +213,7 @@ if(isset($_POST["connexion"]))
                   <div class="about-box">
                   <span><?php echo $message; ?><span>
                   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<<<<<<< Updated upstream
                         <div>
                             <label for="email">E-mail :</label>
                             <input type="email" id="email" name="email" required>
@@ -180,6 +231,39 @@ if(isset($_POST["connexion"]))
                                     Mot de passe oublié?
                                 </a>
                             </div>
+=======
+                        <div class="inba3adhom">
+                            <label for="email">E-mail :</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div  class="inba3adhom">
+                            <label for="password">Mot de passe :</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6Lc39SkpAAAAAP-FT1PljMvg1u5jaHBKQgqUcm0T" style="margin-left: 170px;"></div>
+                        </div>
+                        <div>
+                            <input type="submit" id="coonexion" name="connexion" value="connexion" class="btn">
+                        </div>
+                       
+
+                        <div >
+                                
+                                <a href="recover_psw.php" class="btn"  >
+                                    Mot de passe oublié?
+                                </a>
+                            </div>
+
+
+
+                            <div  >
+                                
+                                <a href="utilisateur.php"  class="btn" >
+                                    inscription
+                                </a>
+                            </div>
+>>>>>>> Stashed changes
                     </form>
                   </div>
                </div>
@@ -219,11 +303,15 @@ if(isset($_POST["connexion"]))
                </div>
             </div>
          </div>
+<<<<<<< Updated upstream
          <div class="copyright">
             <div class="container">
                <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a></p>
             </div>
          </div>
+=======
+        
+>>>>>>> Stashed changes
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
@@ -236,4 +324,17 @@ if(isset($_POST["connexion"]))
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
    </body>
+<<<<<<< Updated upstream
 </html>
+=======
+</html>
+<script>
+$(document).on('click','#coonexion',function(){
+   var response =grecaptcha.getResponse();
+   if(response.length==0){
+      alert("Merci de verifier si tu n'est pas un robot");
+      return false;
+   }
+});
+</script>
+>>>>>>> Stashed changes

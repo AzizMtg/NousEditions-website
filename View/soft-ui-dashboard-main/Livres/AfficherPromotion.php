@@ -1,7 +1,12 @@
 
 <?php
+<<<<<<< Updated upstream
 	//include '../../../Controller/promotionC.php';
 include '../../../Controller/Siwar/promotionC.php';
+=======
+	include '../../../Controller/Siwar/promotionC.php';
+
+>>>>>>> Stashed changes
     $promotionC = new promotionC();
 
   
@@ -62,6 +67,23 @@ include '../../../Controller/Siwar/promotionC.php';
 }
 
   </style>
+<<<<<<< Updated upstream
+=======
+<!--hetha confirmer suppression -->
+<script>
+    function confirmDelete(idP) {
+        var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer cette promotion  ?");
+        if (confirmDelete) {
+            window.location.href = 'SupprimerPromotion.php?idL=' + idP;
+        }
+    }
+</script>
+<!--whetha confirmer modification  -->
+
+
+
+
+>>>>>>> Stashed changes
 
 
 
@@ -342,9 +364,17 @@ include '../../../Controller/Siwar/promotionC.php';
 						<input type="hidden"  value=<?php echo $promotion['idP']; ?>  name="idP">  
 					</form>
 				</td>
+<<<<<<< Updated upstream
 				<td>
 					<a  class="btn btn-danger btn-sm"   href="SupprimerPromotion.php?idP=<?php echo $promotion['idP']; ?>">Supprimer</a>
 				</td>
+=======
+				
+        <td>
+    <!-- <a class="btn btn-danger btn-sm" href="Supprimerlivre.php?idL=<?php echo $promotion['idP']; ?>">Supprimer</a> -->
+    <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="confirmDelete(<?php echo $promotion['idP']; ?>)">supprimer</a>
+</td>
+>>>>>>> Stashed changes
 			</tr>
 			<?php
 				}

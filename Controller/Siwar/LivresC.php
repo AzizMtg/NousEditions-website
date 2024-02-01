@@ -30,7 +30,11 @@
 				$req->execute();
 			}
 			catch(Exception $e){
+<<<<<<< Updated upstream
 				die('Erreur:'. $e->getMeesage());
+=======
+				die('Erreur:'. $e->getMessage());
+>>>>>>> Stashed changes
 			}
 		}
 
@@ -110,7 +114,21 @@ function TriNom(){
 }
 
 /////..............................search............................../////
+<<<<<<< Updated upstream
 
+=======
+function Recherche($nom){
+	$sql="SELECT * from livres where nom like '".$nom."%' ";
+	$db = config::getConnexion();
+	try{
+		$liste = $db->query($sql);
+		return $liste;
+	}
+	catch(Exception $e){
+		die('Erreur:'. $e->getMessage());
+	}
+}
+>>>>>>> Stashed changes
 
 /////..............................Affichage par la cle Primaire............................../////
 function Recupererpromotion($idP){
