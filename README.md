@@ -14,6 +14,10 @@ Explore the world of literature at Nouseditions, where a dynamic and integrated 
 - 3D books with ThreeJs
 - Mails with PhPmailer
 
+![ezgif-1-7e8481a6b9](https://github.com/AzizMtg/NousEditions-website/assets/131389390/7d51cf32-d8b4-4f59-83b9-b129d3eaa2d8)
+
+![ezgif-4-0f0f9f0a02](https://github.com/AzizMtg/NousEditions-website/assets/131389390/06b6d790-4a68-4f44-a37c-e62b278bae74)
+
 
 ## Deployment
 
