@@ -1,17 +1,15 @@
 
 # Nous Editions Website
 
-Explore the world of literature at Nouseditions, where a dynamic and integrated flask chatbot awaits your literary inquiries. Our platform boasts an extensive collection of books to cater to diverse reading preferences. What sets us apart is our commitment to promoting emerging talent - authors have the opportunity to submit their own books for consideration.
-
+E-Commerce Book-Selling Website, a dynamic online platform tailored for the specific needs of Nous Editions, a prominent book publishing house. This project adopts the Model-View-Controller (MVC) architecture, utilizing PHP, JavaScript, and HTML to create a seamless and engaging e-commerce experience. With a focus on user experience, we've incorporated Three.js for 3D book renderings and a chatbot powered by Flask and Python to enhance interactivity.
 
 
 ## Features
-
-- Flask Chatbot: Engage with our intuitive flask chatbot to discover books, get personalized recommendations, and explore literary insights. The chatbot adds an interactive and user-friendly dimension to your browsing experience.
-- Author Submissions: Calling all authors! Showcase your literary creations by submitting your own books directly through our platform. We value originality and strive to provide a platform for aspiring authors to share their work with a wider audience.
-- Author Backoffice: Our comprehensive backoffice empowers administrators to efficiently manage author contributions. Easily track submitted books, read through author contributions, and ensure a seamless workflow for book submissions.
-- Statistical Insights: Stay informed with detailed statistics on user engagement, book popularity, and more. Our platform provides valuable insights to help authors and administrators understand trends and make informed decisions.
-- 3D books with ThreeJs
+- Utilizing the Model-View-Controller (MVC) approach for a scalable and maintainable codebase / Engineered with PHP, JavaScript, and HTML to ensure a responsive and user-friendly interface.
+- Flask-Powered Chatbot Integration: Seamless integration of a chatbot using Flask and Python for enhanced user engagement.
+- Author Submissions: Authors can easily upload their books through a user-friendly interface / supports various book formats and metadata to ensure a comprehensive showcase of author works.
+- Author Backoffice: Admin dashboard for efficient management of books, authors, and user data and analytics and reporting tools to track sales, user engagement, and website performance.
+- Enhanced User Experience with Three.js: Integration of Three.js to provide 3D book renderings, offering users a visually captivating browsing experience.
 - Mails with PhPmailer
 
 ![ezgif-1-7e8481a6b9](https://github.com/AzizMtg/NousEditions-website/assets/131389390/7d51cf32-d8b4-4f59-83b9-b129d3eaa2d8)
