@@ -1,7 +1,7 @@
 
 # Nous Editions Website
 
-E-Commerce Book-Selling Website, a dynamic online platform tailored for the specific needs of Nous Editions, a prominent book publishing house. This project adopts the Model-View-Controller (MVC) architecture, utilizing PHP, JavaScript, and HTML to create a seamless and engaging e-commerce experience. With a focus on user experience, we've incorporated Three.js for 3D book renderings and a chatbot powered by Flask and Python to enhance interactivity.
+E-Commerce Book-Selling Website, a dynamic online platform tailored for the specific needs of Nous Editions, a prominent book publishing house in Tunisia. This project adopts the Model-View-Controller (MVC) architecture, utilizing PHP, JavaScript, and HTML to create a seamless and engaging e-commerce experience. With a focus on user experience, we've incorporated Three.js for 3D book renderings and a chatbot powered by Flask and Python to enhance interactivity.
 
 
 ## Features
